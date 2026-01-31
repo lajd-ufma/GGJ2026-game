@@ -11,3 +11,4 @@ light_mask = 2
 [node name="BaseCharacter" parent="." instance=ExtResource("2_luxfq")]
 position = Vector2(375, 199)
 collision_mask = 2
+_move_speed = 200.0

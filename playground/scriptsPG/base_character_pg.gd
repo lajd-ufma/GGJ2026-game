@@ -4,6 +4,9 @@ class_name BaseCaracter
 @export_category("Variables")
 @export var _move_speed: float = 200.0
 
+@export_category("Objects")
+@export var _animation: AnimationPlayer
+
 func _process(delta: float) -> void:
 	pass
 
@@ -12,3 +15,7 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = _direction * _move_speed
 	move_and_slide()
+	if velocity:
+		_animation.play("run")
+		return
+	_animation.play("idle")
