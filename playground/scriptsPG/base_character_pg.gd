@@ -6,6 +6,7 @@ class_name BaseCaracter
 
 @export_category("Objects")
 @export var _animation: AnimationPlayer
+@export var _sprite2D: Sprite2D
 
 func _process(delta: float) -> void:
 	pass
@@ -15,6 +16,10 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = _direction * _move_speed
 	move_and_slide()
+	if velocity.x > 0:
+		_sprite2D.flip_h = false
+	if velocity.x < 0:
+		_sprite2D.flip_h = true
 	if velocity:
 		_animation.play("run")
 		return

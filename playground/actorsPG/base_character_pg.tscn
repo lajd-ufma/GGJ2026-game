@@ -137,9 +137,10 @@ _data = {
 &"run": SubResource("Animation_uly6p")
 }
 
-[node name="BaseCharacter" type="CharacterBody2D" node_paths=PackedStringArray("_animation")]
+[node name="BaseCharacter" type="CharacterBody2D" node_paths=PackedStringArray("_animation", "_sprite2D")]
 script = ExtResource("1_7r7ju")
 _animation = NodePath("Animation")
+_sprite2D = NodePath("Texture")
 
 [node name="Texture" type="Sprite2D" parent="."]
 position = Vector2(0, -31)
