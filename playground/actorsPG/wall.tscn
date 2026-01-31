@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c3xrppkf4d3sc"]
+
+[ext_resource type="Texture2D" uid="uid://ddrgds5h4ngpu" path="res://playground/assetsPG/Tiny Swords (Free Pack)/Buildings/Black Buildings/Tower.png" id="1_m3c6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjv05"]
+size = Vector2(119, 328)
+
+[node name="Wall" type="StaticBody2D" unique_id=976257622]
+collision_layer = 32
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=710557261]
+position = Vector2(0, 2.0000076)
+scale = Vector2(1, 1.8867188)
+texture = ExtResource("1_m3c6b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=535075077]
+position = Vector2(1.5, 18)
+shape = SubResource("RectangleShape2D_sjv05")

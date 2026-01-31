@@ -33,7 +33,8 @@ func _input(event):
 func tentar_empurrar() -> void:
 	if em_movimento:
 		return
-
+	if not mascarado:
+		return
 	if player_dentro == null:
 		return
 
