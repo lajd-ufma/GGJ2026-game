@@ -4,18 +4,34 @@
 [ext_resource type="Texture2D" uid="uid://cmyty7alrffcu" path="res://icon.svg" id="1_bxkrq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xesk"]
+size = Vector2(150, 153)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_id6cy"]
 size = Vector2(127, 127)
 
-[node name="Block" type="Area2D" unique_id=1261224743]
-collision_layer = 16
-collision_mask = 11
+[node name="Block" type="Node2D" unique_id=857622503]
 script = ExtResource("1_2xesk")
 
-[node name="Area2D" type="Sprite2D" parent="." unique_id=761151680]
+[node name="Area2D" type="Area2D" parent="." unique_id=1261224743]
+collision_layer = 16
+collision_mask = 11
+
+[node name="Sprite" type="Sprite2D" parent="Area2D" unique_id=761151680]
 texture = ExtResource("1_bxkrq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1179916996]
-position = Vector2(-0.5, -0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1179916996]
+position = Vector2(-2, 0.5)
 shape = SubResource("RectangleShape2D_2xesk")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1586740856]
+collision_layer = 16
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=448785546]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_id6cy")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1922163499]
+collision_mask = 10
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
