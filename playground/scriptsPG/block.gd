@@ -1,6 +1,6 @@
 extends Node2D
 
-const DISTANCIA := 128
+const DISTANCIA := 64
 const TEMPO := 0.25
 
 var em_movimento := false
@@ -10,18 +10,6 @@ var player_dentro: Node2D = null
 @onready var area: Area2D = $Area2D
 @onready var raycast: RayCast2D = $RayCast2D
 
-signal water_mask
-
-func _ready() -> void:
-	water_mask.connect(autorizacao)
-
-	# evita detectar o player no raycast
-	var player = get_tree().get_first_node_in_group("player")
-	if player:
-		raycast.add_exception(player)
-
-func autorizacao():
-	mascarado = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -38,8 +26,9 @@ func _input(event):
 func tentar_empurrar() -> void:
 	if em_movimento:
 		return
-
 	if player_dentro == null:
+		return
+	if !player_dentro.pode_empurrar_bloco:
 		return
 
 	var diff = global_position - player_dentro.global_position
@@ -49,6 +38,7 @@ func tentar_empurrar() -> void:
 		direcao.x = sign(diff.x)
 	else:
 		direcao.y = sign(diff.y)
+		
 
 	# checa colisão à frente
 	raycast.target_position = direcao * DISTANCIA

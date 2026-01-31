@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://hw8sttxbnag7"]
 
-[ext_resource type="PackedScene" uid="uid://cntfsr8nfof1l" path="res://playground/actorsPG/base_character_pg.tscn" id="1_6hiyy"]
 [ext_resource type="TileSet" uid="uid://cu782pbp7n2to" path="res://playground/scenesPG/chao.tres" id="1_hk3bm"]
-[ext_resource type="PackedScene" uid="uid://b7qksv6pf1oit" path="res://playground/actorsPG/mask.tscn" id="2_js2ra"]
 [ext_resource type="TileSet" uid="uid://57p73njfpngj" path="res://playground/scenesPG/agua.tres" id="2_mmeug"]
 [ext_resource type="TileSet" uid="uid://dn004a0lnypv4" path="res://playground/scenesPG/tronco.tres" id="3_nl5wh"]
+[ext_resource type="PackedScene" path="res://playground/actorsPG/player.tscn" id="4_s3656"]
+[ext_resource type="PackedScene" path="res://generic_mask.tscn" id="5_hk3bm"]
 
 [node name="level4" type="Node2D" unique_id=1502414711]
 
@@ -24,13 +24,14 @@ tile_set = ExtResource("2_mmeug")
 tile_map_data = PackedByteArray("AAANAAsAAAABAAMAAAANAAoAAAABAAMAAAANAAkAAAABAAMAAAANAAgAAAABAAMAAAANAAcAAAABAAMAAAANAAYAAAABAAMAAAANAAUAAAABAAMAAAANAAQAAAABAAMAAAANAAMAAAABAAMAAAANAAIAAAABAAMAAAANAAEAAAABAAMAAAANAAAAAAABAAMAAAA=")
 tile_set = ExtResource("3_nl5wh")
 
-[node name="BaseCharacter" parent="." unique_id=1114739500 instance=ExtResource("1_6hiyy")]
-position = Vector2(244, 364)
+[node name="player" parent="." unique_id=1362530387 instance=ExtResource("4_s3656")]
+position = Vector2(295, 347)
 
-[node name="Mask" parent="." unique_id=1907293852 instance=ExtResource("2_js2ra")]
-position = Vector2(330, 87)
-scale = Vector2(0.1, 0.1)
+[node name="generic_mask" parent="." unique_id=241255481 instance=ExtResource("5_hk3bm")]
+position = Vector2(580, 61)
+scale = Vector2(1.5, 1.5)
+mask_element = 1
 
-[node name="Mask2" parent="." unique_id=117645494 instance=ExtResource("2_js2ra")]
-position = Vector2(473, 84)
-scale = Vector2(0.1, 0.1)
+[node name="generic_mask2" parent="." unique_id=1381002373 instance=ExtResource("5_hk3bm")]
+position = Vector2(381, 63)
+scale = Vector2(1.5, 1.5)

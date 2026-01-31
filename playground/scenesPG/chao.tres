@@ -1,10 +1,10 @@
-[gd_resource type="TileSet" format=3 uid="uid://cu782pbp7n2to"]
+[gd_resource type="TileSet" format=3 uid="uid://5kdp2uw5u6tn"]
 
-[ext_resource type="Texture2D" uid="uid://bj6robrnn2ipq" path="res://playground/assetsPG/Tiny Swords (Free Pack)/Terrain/Tileset/Tilemap_color2.png" id="1_yvg3l"]
+[ext_resource type="Texture2D" uid="uid://db0g3a4ebydo0" path="res://assets/background/imagem_tiles.png" id="1_yvg3l"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nps3d"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obe8n"]
 texture = ExtResource("1_yvg3l")
-texture_region_size = Vector2i(64, 64)
+texture_region_size = Vector2i(256, 256)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -12,54 +12,22 @@ texture_region_size = Vector2i(64, 64)
 4:0/0 = 0
 5:0/0 = 0
 6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 
 [resource]
-tile_size = Vector2i(64, 64)
-sources/0 = SubResource("TileSetAtlasSource_nps3d")
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 17
+sources/4 = SubResource("TileSetAtlasSource_obe8n")

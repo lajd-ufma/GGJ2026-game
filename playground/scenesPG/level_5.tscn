@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://cu782pbp7n2to" path="res://playground/scenesPG/chao.tres" id="1_o8x44"]
 [ext_resource type="PackedScene" uid="uid://b7qksv6pf1oit" path="res://playground/actorsPG/mask.tscn" id="2_ficwy"]
 [ext_resource type="PackedScene" uid="uid://dsa5lexnsuvpr" path="res://playground/actorsPG/block.tscn" id="4_t3wur"]
+[ext_resource type="Script" path="res://playground/scriptsPG/block.gd" id="5_t3wur"]
 
 [node name="level5" type="Node2D" unique_id=1502414711]
 
@@ -27,3 +28,4 @@ scale = Vector2(0.15, 0.15)
 [node name="Block" parent="." unique_id=857622503 instance=ExtResource("4_t3wur")]
 position = Vector2(701, 362)
 scale = Vector2(0.5, 0.5)
+script = ExtResource("5_t3wur")
