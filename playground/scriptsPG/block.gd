@@ -20,7 +20,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		player_dentro = null
 
 func _input(event):
-	if event.is_action_pressed("shoot"):
+	if event.is_action_pressed("special"):
 		tentar_empurrar()
 
 func tentar_empurrar() -> void:

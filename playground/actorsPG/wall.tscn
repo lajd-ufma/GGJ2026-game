@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://blvypiedpnhk6"]
 
-[ext_resource type="Texture2D" uid="uid://ddrgds5h4ngpu" path="res://playground/assetsPG/Tiny Swords (Free Pack)/Buildings/Black Buildings/Tower.png" id="1_m3c6b"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjv05"]
 size = Vector2(119, 181)
 
@@ -9,11 +7,12 @@ size = Vector2(119, 181)
 position = Vector2(-2, 2)
 collision_layer = 32
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=710557261]
-position = Vector2(0, 2.0000076)
-scale = Vector2(1, 1.8867188)
-texture = ExtResource("1_m3c6b")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=535075077]
 position = Vector2(1.5, 90.5)
 shape = SubResource("RectangleShape2D_sjv05")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1250037986]
+offset_left = -57.0
+offset_right = 66.0
+offset_bottom = 183.0
+color = Color(0.29291007, 0.00045262158, 0.4074958, 1)

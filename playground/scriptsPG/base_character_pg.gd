@@ -63,7 +63,7 @@ func _process(_delta: float) -> void:
 	if raycast_l.is_colliding() or raycast_r.is_colliding():
 		z_index=2
 	else:
-		z_index = 0
+		z_index = 1
 	set_animation()
 func set_animation():
 	var anim := idle_animation
@@ -88,11 +88,11 @@ func set_pode_atirar(value):
 	pode_atirar = value
 
 func _input(event):
-	if event.is_action_pressed("shoot") and pode_atirar:
-		shoot()
-
-	if event.is_action_pressed("dash") and pode_dar_dash:
-		start_dash()
+	if event.is_action_pressed("special"):
+		if pode_atirar:
+			shoot()
+		if pode_dar_dash:
+			start_dash()
 
 func _physics_process(delta: float) -> void:
 	if is_dashing:
@@ -121,6 +121,8 @@ func _physics_process(delta: float) -> void:
 		last_direction = input_dir
 
 	velocity = input_dir * _move_speed
+	position.x = clamp(position.x, 0, 1280)
+	position.y = clamp(position.y, 0, 768)
 	move_and_slide()
 
 	# sprite
