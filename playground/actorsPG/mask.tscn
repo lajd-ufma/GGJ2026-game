@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b7qksv6pf1oit"]
 
+[ext_resource type="Script" uid="uid://by8bb00xjfva2" path="res://playground/scriptsPG/mask.gd" id="1_4u3g3"]
 [ext_resource type="Texture2D" uid="uid://d4k5wnl36r47g" path="res://playground/assetsPG/ChatGPT Image 31 de jan. de 2026, 00_59_05.png" id="1_se4sn"]
 
 [sub_resource type="Animation" id="Animation_4u3g3"]
@@ -69,7 +70,8 @@ _data = {
 radius = 169.0
 height = 538.0
 
-[node name="Mask" type="CharacterBody2D" unique_id=1516077768]
+[node name="Mask" type="Area2D" unique_id=1907293852]
+script = ExtResource("1_4u3g3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=730199498]
 texture = ExtResource("1_se4sn")
@@ -78,7 +80,10 @@ vframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1192199237]
 libraries/ = SubResource("AnimationLibrary_j3gu4")
+autoplay = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=962613507]
 light_mask = 4
 shape = SubResource("CapsuleShape2D_th616")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

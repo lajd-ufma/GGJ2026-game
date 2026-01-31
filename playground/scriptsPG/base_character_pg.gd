@@ -7,9 +7,14 @@ class_name BaseCaracter
 @export_category("Objects")
 @export var _animation: AnimationPlayer
 @export var _sprite2D: Sprite2D
+signal water_mask
 
-func _process(delta: float) -> void:
-	pass
+func _ready() -> void:
+	water_mask.connect(pode_entrar_na_agua)
+	
+func pode_entrar_na_agua():
+	print('CHEGLUY AQUI')
+	set_collision_mask_value(4, false)
 
 func _physics_process(delta: float) -> void:
 	var _direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
