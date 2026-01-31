@@ -10,13 +10,6 @@ var player_dentro: Node2D = null
 @onready var area: Area2D = $Area2D
 @onready var raycast: RayCast2D = $RayCast2D
 
-signal water_mask
-
-func _ready() -> void:
-	water_mask.connect(autorizacao)
-
-func autorizacao():
-	mascarado = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -33,9 +26,9 @@ func _input(event):
 func tentar_empurrar() -> void:
 	if em_movimento:
 		return
-	if not mascarado:
-		return
 	if player_dentro == null:
+		return
+	if !player_dentro.pode_empurrar_bloco:
 		return
 
 	var diff = global_position - player_dentro.global_position

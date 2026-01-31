@@ -4,10 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dxf6iebgala45" path="res://playground/assetsPG/Tiny Swords (Free Pack)/Units/Purple Units/Pawn/Pawn_Idle.png" id="2_grp3x"]
 [ext_resource type="Texture2D" uid="uid://cxxg8wl6n65s1" path="res://playground/assetsPG/Tiny Swords (Free Pack)/Units/Purple Units/Pawn/Pawn_Run.png" id="2_qhf5w"]
 [ext_resource type="PackedScene" uid="uid://uw4p3rfvkvhj" path="res://playground/actorsPG/bullet.tscn" id="2_x0vop"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhf5w"]
-radius = 5.99997
-height = 31.9998
+[ext_resource type="Texture2D" uid="uid://dve3uwr31p2up" path="res://assets/sprite_mask/IDLE/idle_mask.png" id="3_x0vop"]
+[ext_resource type="Texture2D" uid="uid://3xm71nrccq2h" path="res://assets/sprite_mask/IDLE/idle_left.png" id="6_uly6p"]
+[ext_resource type="Texture2D" uid="uid://5b3hytpc44wk" path="res://assets/sprite_mask/IDLE/idle_up.png" id="7_iwrcb"]
 
 [sub_resource type="Animation" id="Animation_uk7uj"]
 length = 0.001
@@ -90,6 +89,11 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
+[sub_resource type="Animation" id="Animation_iwrcb"]
+resource_name = "new_idle"
+loop_mode = 1
+step = 0.1
+
 [sub_resource type="Animation" id="Animation_uly6p"]
 resource_name = "run"
 length = 0.6
@@ -135,26 +139,218 @@ tracks/2/keys = {
 _data = {
 &"RESET": SubResource("Animation_uk7uj"),
 &"idle": SubResource("Animation_x0vop"),
+&"new_idle": SubResource("Animation_iwrcb"),
 &"run": SubResource("Animation_uly6p")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhf5w"]
+radius = 19.215004
+height = 45.105835
+
+[sub_resource type="Animation" id="Animation_j1rto"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_x0vop")]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_frj6c"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_x0vop")]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.016666668, -0.16666667, 0, 0, 2, -0.016666668, -0.16666667, 0, 0, 3, -0.01666667, -0.16666667, 0, 0, 4, -0.016666666, -0.16666667, 0, 0, 5, -0.016666666, -0.16666667, 0, 0, 6, -0.016666671, -0.16666669, 0, 0, 7, -0.016666662, -0.16666669, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7)
+}
+
+[sub_resource type="Animation" id="Animation_k07iq"]
+resource_name = "idle_side"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_uly6p")]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.016666668, -0.16666667, 0, 0, 2, -0.016666668, -0.16666667, 0, 0, 3, -0.01666667, -0.16666667, 0, 0, 4, -0.016666666, -0.16666667, 0, 0, 5, -0.016666666, -0.16666667, 0, 0, 6, -0.016666671, -0.16666669, 0, 0, 7, -0.016666662, -0.16666669, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7)
+}
+
+[sub_resource type="Animation" id="Animation_ren0b"]
+resource_name = "idle_up"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_iwrcb")]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.016666668, -0.16666667, 0, 0, 2, -0.016666668, -0.16666667, 0, 0, 3, -0.01666667, -0.16666667, 0, 0, 4, -0.016666666, -0.16666667, 0, 0, 5, -0.016666666, -0.16666667, 0, 0, 6, -0.016666671, -0.16666669, 0, 0, 7, -0.016666662, -0.16666669, 0, 0, 8, -0.016666671, -0.16666669, 0, 0, 9, -0.016666671, -0.16666669, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0gjw"]
+_data = {
+&"RESET": SubResource("Animation_j1rto"),
+&"idle": SubResource("Animation_frj6c"),
+&"idle_side": SubResource("Animation_k07iq"),
+&"idle_up": SubResource("Animation_ren0b")
 }
 
 [node name="BaseCharacter" type="CharacterBody2D" unique_id=1114739500 node_paths=PackedStringArray("_animation", "_sprite2D") groups=["player"]]
 collision_mask = 62
 script = ExtResource("1_7r7ju")
-_animation = NodePath("Animation")
+_animation = NodePath("Animator")
 _sprite2D = NodePath("Texture")
 bullet_scene = ExtResource("2_x0vop")
 
+[node name="Animator" type="AnimationPlayer" parent="." unique_id=857519334]
+libraries/ = SubResource("AnimationLibrary_iwrcb")
+autoplay = &"new_idle"
+
 [node name="Texture" type="Sprite2D" parent="." unique_id=2072382403]
+visible = false
 position = Vector2(0, -31)
 texture = ExtResource("2_qhf5w")
 hframes = 6
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1944023210]
-position = Vector2(1, 1)
-rotation = -1.57401
+visible = false
+position = Vector2(1.0000001, -21)
+rotation = 3.1415927
+scale = Vector2(-0.96453327, 1.1669886)
 shape = SubResource("CapsuleShape2D_qhf5w")
 
-[node name="Animation" type="AnimationPlayer" parent="." unique_id=857519334]
-libraries/ = SubResource("AnimationLibrary_iwrcb")
+[node name="raycast_l" type="RayCast2D" parent="." unique_id=1952524097]
+position = Vector2(-11, 0)
+rotation = 3.1415927
+target_position = Vector2(5.3327894e-06, 61)
+collision_mask = 32
+
+[node name="raycast_r" type="RayCast2D" parent="." unique_id=1715983357]
+position = Vector2(14, 0)
+rotation = 3.1415927
+target_position = Vector2(5.3327894e-06, 61)
+collision_mask = 32
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=239932031]
+texture = ExtResource("3_x0vop")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1369633499]
+libraries/ = SubResource("AnimationLibrary_k0gjw")
 autoplay = &"idle"

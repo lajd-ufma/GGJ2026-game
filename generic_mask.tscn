@@ -10,7 +10,7 @@ script = ExtResource("1_h87lm")
 mask_element = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1895112890]
-scale = Vector2(0.15234378, 0.15234378)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_magpp")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1098973325]

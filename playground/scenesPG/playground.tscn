@@ -1,27 +1,37 @@
 [gd_scene format=3 uid="uid://n3heiai41oxq"]
 
 [ext_resource type="PackedScene" uid="uid://ccp31fuyyqtly" path="res://playground/scenesPG/terrain_manager.tscn" id="1_mm8fh"]
-[ext_resource type="PackedScene" uid="uid://cntfsr8nfof1l" path="res://playground/actorsPG/base_character_pg.tscn" id="2_luxfq"]
-[ext_resource type="PackedScene" uid="uid://b7qksv6pf1oit" path="res://playground/actorsPG/mask.tscn" id="3_luxfq"]
 [ext_resource type="PackedScene" uid="uid://dsa5lexnsuvpr" path="res://playground/actorsPG/block.tscn" id="4_xx4lu"]
-[ext_resource type="PackedScene" uid="uid://c3xrppkf4d3sc" path="res://playground/actorsPG/wall.tscn" id="5_t4yo2"]
+[ext_resource type="PackedScene" uid="uid://dc5v12gywcxps" path="res://playground/actorsPG/player.tscn" id="5_1kgxw"]
+[ext_resource type="PackedScene" uid="uid://blvypiedpnhk6" path="res://playground/actorsPG/wall.tscn" id="5_t4yo2"]
+[ext_resource type="PackedScene" uid="uid://h4vm1pmkjc6u" path="res://generic_mask.tscn" id="6_1kgxw"]
 
 [node name="Playground" type="Node2D" unique_id=772824261]
 
 [node name="TerrainManager" parent="." unique_id=855998751 instance=ExtResource("1_mm8fh")]
 
-[node name="Mask" parent="." unique_id=1516077768 instance=ExtResource("3_luxfq")]
-position = Vector2(952, 159)
-scale = Vector2(0.15, 0.15)
-collision_layer = 4
-
 [node name="Block" parent="." unique_id=1261224743 instance=ExtResource("4_xx4lu")]
 position = Vector2(679, 466)
 scale = Vector2(0.5, 0.5)
 
-[node name="BaseCharacter" parent="." unique_id=1512200366 instance=ExtResource("2_luxfq")]
-position = Vector2(375, 199)
-
 [node name="Wall" parent="." unique_id=976257622 instance=ExtResource("5_t4yo2")]
 position = Vector2(860, 152)
 scale = Vector2(0.5, 0.5)
+
+[node name="generic_mask" parent="." unique_id=241255481 instance=ExtResource("6_1kgxw")]
+position = Vector2(650, 162)
+mask_element = 1
+
+[node name="generic_mask2" parent="." unique_id=392058370 instance=ExtResource("6_1kgxw")]
+position = Vector2(652, 249)
+
+[node name="generic_mask3" parent="." unique_id=1521585000 instance=ExtResource("6_1kgxw")]
+position = Vector2(738, 127)
+mask_element = 0
+
+[node name="generic_mask4" parent="." unique_id=1527778190 instance=ExtResource("6_1kgxw")]
+position = Vector2(721, 191)
+mask_element = 3
+
+[node name="player" parent="." unique_id=1362530387 instance=ExtResource("5_1kgxw")]
+position = Vector2(737, 266)
