@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://n3heiai41oxq"]
+
+[ext_resource type="PackedScene" uid="uid://ccp31fuyyqtly" path="res://playground/scenesPG/terrain_manager.tscn" id="1_mm8fh"]
+[ext_resource type="PackedScene" uid="uid://cntfsr8nfof1l" path="res://playground/actorsPG/base_character_pg.tscn" id="2_luxfq"]
+
+[node name="Playground" type="Node2D"]
+
+[node name="TerrainManager" parent="." instance=ExtResource("1_mm8fh")]
+light_mask = 2
+
+[node name="BaseCharacter" parent="." instance=ExtResource("2_luxfq")]
+position = Vector2(375, 199)
+collision_mask = 2
