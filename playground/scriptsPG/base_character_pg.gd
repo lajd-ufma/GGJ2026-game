@@ -22,9 +22,11 @@ func pode_entrar_na_agua():
 	set_collision_mask_value(4, false)
 	mascarado = true
 
-#func _input(event):
-	#if event.is_action_pressed("shoot"):
-		#shoot()
+func _input(event):
+	if event.is_action_pressed("shoot"):
+		shoot()
+	if event.is_action_pressed("dash"):
+		print("dash")
 
 func _physics_process(delta: float) -> void:
 	var input_dir := Vector2.ZERO
