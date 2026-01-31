@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b7qksv6pf1oit"]
+
+[ext_resource type="Texture2D" uid="uid://d4k5wnl36r47g" path="res://playground/assetsPG/ChatGPT Image 31 de jan. de 2026, 00_59_05.png" id="1_se4sn"]
+
+[sub_resource type="Animation" id="Animation_4u3g3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_se4sn")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_si0lp"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_se4sn")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j3gu4"]
+_data = {
+&"RESET": SubResource("Animation_4u3g3"),
+&"idle": SubResource("Animation_si0lp")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_th616"]
+radius = 169.0
+height = 538.0
+
+[node name="Mask" type="CharacterBody2D" unique_id=1516077768]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=730199498]
+texture = ExtResource("1_se4sn")
+hframes = 2
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1192199237]
+libraries/ = SubResource("AnimationLibrary_j3gu4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=962613507]
+light_mask = 4
+shape = SubResource("CapsuleShape2D_th616")

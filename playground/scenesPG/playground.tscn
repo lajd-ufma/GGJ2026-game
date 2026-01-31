@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://n3heiai41oxq"]
+[gd_scene format=3 uid="uid://n3heiai41oxq"]
 
 [ext_resource type="PackedScene" uid="uid://ccp31fuyyqtly" path="res://playground/scenesPG/terrain_manager.tscn" id="1_mm8fh"]
 [ext_resource type="PackedScene" uid="uid://cntfsr8nfof1l" path="res://playground/actorsPG/base_character_pg.tscn" id="2_luxfq"]
+[ext_resource type="PackedScene" uid="uid://b7qksv6pf1oit" path="res://playground/actorsPG/mask.tscn" id="3_luxfq"]
 
-[node name="Playground" type="Node2D"]
+[node name="Playground" type="Node2D" unique_id=772824261]
 
-[node name="TerrainManager" parent="." instance=ExtResource("1_mm8fh")]
+[node name="TerrainManager" parent="." unique_id=855998751 instance=ExtResource("1_mm8fh")]
 light_mask = 2
 
-[node name="BaseCharacter" parent="." instance=ExtResource("2_luxfq")]
+[node name="BaseCharacter" parent="." unique_id=1512200366 instance=ExtResource("2_luxfq")]
 position = Vector2(375, 199)
 collision_mask = 2
+
+[node name="Mask" parent="." unique_id=1516077768 instance=ExtResource("3_luxfq")]
+position = Vector2(773, 190)
+scale = Vector2(0.15, 0.15)
