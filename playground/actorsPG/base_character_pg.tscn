@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b6vre4o6y3ndj" path="res://playground/scriptsPG/base_character_pg.gd" id="1_7r7ju"]
 [ext_resource type="Texture2D" uid="uid://dxf6iebgala45" path="res://playground/assetsPG/Tiny Swords (Free Pack)/Units/Purple Units/Pawn/Pawn_Idle.png" id="2_grp3x"]
 [ext_resource type="Texture2D" uid="uid://cxxg8wl6n65s1" path="res://playground/assetsPG/Tiny Swords (Free Pack)/Units/Purple Units/Pawn/Pawn_Run.png" id="2_qhf5w"]
+[ext_resource type="PackedScene" uid="uid://uw4p3rfvkvhj" path="res://playground/actorsPG/bullet.tscn" id="2_x0vop"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhf5w"]
 radius = 5.99997
@@ -142,6 +143,7 @@ collision_mask = 30
 script = ExtResource("1_7r7ju")
 _animation = NodePath("Animation")
 _sprite2D = NodePath("Texture")
+bullet_scene = ExtResource("2_x0vop")
 
 [node name="Texture" type="Sprite2D" parent="." unique_id=2072382403]
 position = Vector2(0, -31)
