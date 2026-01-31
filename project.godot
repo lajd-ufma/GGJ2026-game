@@ -72,7 +72,7 @@ shoot={
 2d_physics/layer_3="colettables"
 2d_physics/layer_4="water"
 2d_physics/layer_5="block"
-2d_physics/layer_6="areaSecret"
+2d_physics/layer_6="Camada 6"
 
 [rendering]
 

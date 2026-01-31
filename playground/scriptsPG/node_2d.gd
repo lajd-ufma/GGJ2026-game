@@ -3,9 +3,9 @@ extends Node2D
 const DISTANCIA := 128
 const TEMPO := 0.25
 
-var is_shooting := false
 var em_movimento := false
-var mascarado = false
+var mascarado := false
+var player_dentro: Node2D = null
 
 @onready var area: Area2D = $Area2D
 @onready var raycast: RayCast2D = $RayCast2D
@@ -15,7 +15,11 @@ signal water_mask
 
 func _ready() -> void:
 	water_mask.connect(autorizacao)
+
+	# evita detectar a si mesmo
 	raycast.add_exception(corpo)
+
+	# evita detectar o player no raycast
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		raycast.add_exception(player)
@@ -23,24 +27,26 @@ func _ready() -> void:
 func autorizacao():
 	mascarado = true
 
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		player_dentro = body
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body == player_dentro:
+		player_dentro = null
+
 func _input(event):
 	if event.is_action_pressed("shoot"):
-		is_shooting = true
+		tentar_empurrar()
 
-	if event.is_action_released("shoot"):
-		is_shooting = false
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func tentar_empurrar() -> void:
 	if em_movimento:
 		return
 
-	if not body.is_in_group("player"):
+	if player_dentro == null:
 		return
 
-	if not is_shooting:
-		return
-
-	var diff = global_position - body.global_position
+	var diff = global_position - player_dentro.global_position
 	var direcao := Vector2.ZERO
 
 	if abs(diff.x) > abs(diff.y):
@@ -48,6 +54,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	else:
 		direcao.y = sign(diff.y)
 
+	# checa colisão à frente
 	raycast.target_position = direcao * DISTANCIA
 	raycast.force_raycast_update()
 
@@ -62,6 +69,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(self, "global_position", destino, TEMPO)
 
-	tween.finished.connect(func():
-		em_movimento = false
+	tween.finished.connect(
+		func():
+			em_movimento = false
 	)
