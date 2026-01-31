@@ -20,6 +20,7 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_oaemp"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 8
+physics_layer_0/collision_mask = 17
 sources/0 = SubResource("TileSetAtlasSource_bkpy6")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ieec8"]
@@ -163,6 +164,7 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_xnwoc"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 17
 sources/1 = SubResource("TileSetAtlasSource_wf3u8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8i7f5"]
@@ -191,6 +193,7 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_nnqu1"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 17
 sources/0 = SubResource("TileSetAtlasSource_8i7f5")
 
 [node name="TerrainManager" type="Node2D" unique_id=768857438]

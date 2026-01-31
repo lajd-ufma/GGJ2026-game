@@ -25,6 +25,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=768
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+player=""
+
 [input]
 
 move_left={
@@ -61,6 +65,7 @@ move_down={
 2d_physics/layer_2="background"
 2d_physics/layer_3="colettables"
 2d_physics/layer_4="water"
+2d_physics/layer_5="block"
 
 [rendering]
 

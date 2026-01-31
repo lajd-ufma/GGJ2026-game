@@ -137,8 +137,8 @@ _data = {
 &"run": SubResource("Animation_uly6p")
 }
 
-[node name="BaseCharacter" type="CharacterBody2D" unique_id=1114739500 node_paths=PackedStringArray("_animation", "_sprite2D")]
-collision_mask = 14
+[node name="BaseCharacter" type="CharacterBody2D" unique_id=1114739500 node_paths=PackedStringArray("_animation", "_sprite2D") groups=["player"]]
+collision_mask = 30
 script = ExtResource("1_7r7ju")
 _animation = NodePath("Animation")
 _sprite2D = NodePath("Texture")
