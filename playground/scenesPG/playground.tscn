@@ -11,8 +11,9 @@ light_mask = 2
 
 [node name="BaseCharacter" parent="." unique_id=1512200366 instance=ExtResource("2_luxfq")]
 position = Vector2(375, 199)
-collision_mask = 2
+collision_mask = 6
 
 [node name="Mask" parent="." unique_id=1516077768 instance=ExtResource("3_luxfq")]
-position = Vector2(773, 190)
+position = Vector2(745, 187)
 scale = Vector2(0.15, 0.15)
+collision_layer = 4
