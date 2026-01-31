@@ -18,5 +18,5 @@ collision_layer = 4
 position = Vector2(679, 466)
 scale = Vector2(0.5, 0.5)
 
-[node name="BaseCharacter" parent="." unique_id=1512200366 instance=ExtResource("2_luxfq")]
+[node name="player" parent="." unique_id=1512200366 instance=ExtResource("2_luxfq")]
 position = Vector2(375, 199)

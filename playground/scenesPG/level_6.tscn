@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ol58m0jlklvf"]
+
+[ext_resource type="PackedScene" uid="uid://cntfsr8nfof1l" path="res://playground/actorsPG/base_character_pg.tscn" id="1_peirt"]
+[ext_resource type="PackedScene" uid="uid://b7qksv6pf1oit" path="res://playground/actorsPG/mask.tscn" id="2_2ec7j"]
+
+[node name="level6" type="Node2D" unique_id=1502414711]
+
+[node name="BaseCharacter" parent="." unique_id=1114739500 instance=ExtResource("1_peirt")]
+
+[node name="Mask" parent="." unique_id=1907293852 instance=ExtResource("2_2ec7j")]
+position = Vector2(53, -19)
+scale = Vector2(0.15, 0.15)
