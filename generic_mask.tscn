@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://h4vm1pmkjc6u"]
+
+[ext_resource type="Script" uid="uid://bcphf833wnt51" path="res://generic_mask.gd" id="1_h87lm"]
+[ext_resource type="Texture2D" uid="uid://cmyty7alrffcu" path="res://icon.svg" id="2_magpp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_magpp"]
+
+[node name="generic_mask" type="Node2D" unique_id=241255481]
+script = ExtResource("1_h87lm")
+mask_element = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1895112890]
+scale = Vector2(0.15234378, 0.15234378)
+texture = ExtResource("2_magpp")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1098973325]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1878887876]
+shape = SubResource("CircleShape2D_magpp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
