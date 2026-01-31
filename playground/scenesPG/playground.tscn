@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ccp31fuyyqtly" path="res://playground/scenesPG/terrain_manager.tscn" id="1_mm8fh"]
 [ext_resource type="PackedScene" uid="uid://cntfsr8nfof1l" path="res://playground/actorsPG/base_character_pg.tscn" id="2_luxfq"]
 [ext_resource type="PackedScene" uid="uid://b7qksv6pf1oit" path="res://playground/actorsPG/mask.tscn" id="3_luxfq"]
-[ext_resource type="PackedScene" uid="uid://dsa5lexnsuvpr" path="res://playground/actorsPG/node_2d.tscn" id="4_xx4lu"]
+[ext_resource type="PackedScene" uid="uid://dsa5lexnsuvpr" path="res://playground/actorsPG/block.tscn" id="4_xx4lu"]
 
 [node name="Playground" type="Node2D" unique_id=772824261]
 

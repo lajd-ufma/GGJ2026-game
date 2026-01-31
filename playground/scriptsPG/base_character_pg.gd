@@ -21,9 +21,10 @@ func _ready() -> void:
 func pode_entrar_na_agua():
 	set_collision_mask_value(4, false)
 	mascarado = true
-func _input(event):
-	if event.is_action_pressed("shoot"):
-		shoot()
+
+#func _input(event):
+	#if event.is_action_pressed("shoot"):
+		#shoot()
 
 func _physics_process(delta: float) -> void:
 	var input_dir := Vector2.ZERO
@@ -31,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	input_dir.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	input_dir.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 
-	# trava em 4 direções
+
 	if abs(input_dir.x) > abs(input_dir.y):
 		input_dir.y = 0
 		input_dir.x = sign(input_dir.x)
@@ -39,20 +40,20 @@ func _physics_process(delta: float) -> void:
 		input_dir.x = 0
 		input_dir.y = sign(input_dir.y)
 
-	# salva última direção válida
+
 	if input_dir != Vector2.ZERO:
 		last_direction = input_dir
 
 	velocity = input_dir * _move_speed
 	move_and_slide()
 
-	# sprite flip
+
 	if velocity.x > 0:
 		_sprite2D.flip_h = false
 	elif velocity.x < 0:
 		_sprite2D.flip_h = true
 
-	# animações
+
 	if velocity != Vector2.ZERO:
 		_animation.play("run")
 	else:
