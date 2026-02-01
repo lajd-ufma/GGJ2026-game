@@ -9,7 +9,6 @@ func _ready():
 	# Criamos o player de áudio via código
 	audio_player = background_music.instantiate()
 	add_child(audio_player)
-	play_music()
 
 func play_music():
 	if not audio_player.playing:

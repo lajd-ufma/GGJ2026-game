@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bc0njrjwyv4f1"]
+
+[ext_resource type="Script" uid="uid://cu1nxno7f2ndu" path="res://final.gd" id="1_tvybu"]
+[ext_resource type="PackedScene" uid="uid://ckymstwshore8" path="res://playground/actorsPG/background_music.tscn" id="2_qt6nr"]
+
+[sub_resource type="Animation" id="Animation_tvybu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(360, 250)]
+}
+
+[sub_resource type="Animation" id="Animation_qt6nr"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(360, 250), Vector2(340, 260), Vector2(360, 250)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7678y"]
+_data = {
+&"RESET": SubResource("Animation_tvybu"),
+&"idle": SubResource("Animation_qt6nr")
+}
+
+[node name="final" type="Control" unique_id=964009383]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tvybu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=127185259]
+layout_mode = 0
+offset_right = 1282.0
+offset_bottom = 772.0
+color = Color(0, 0, 0, 1)
+
+[node name="background_music" parent="." unique_id=932558068 instance=ExtResource("2_qt6nr")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=665034068]
+
+[node name="Label" type="Label" parent="." unique_id=333602500]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 250.0
+offset_right = 809.0
+offset_bottom = 338.0
+theme_override_font_sizes/font_size = 64
+text = "Pabéms pasou"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label" unique_id=1444347077]
+libraries/ = SubResource("AnimationLibrary_7678y")
+autoplay = &"idle"
