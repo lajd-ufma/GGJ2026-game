@@ -46,6 +46,7 @@ collision_mask = 62
 [node name="generic_mask" parent="." unique_id=241255481 instance=ExtResource("5_obe8n")]
 position = Vector2(440, 512)
 scale = Vector2(1.5, 1.5)
+mask_element = 2
 
 [node name="chave" parent="." unique_id=422720259 instance=ExtResource("5_iig1j")]
 position = Vector2(1024, 248)

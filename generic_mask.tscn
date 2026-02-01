@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://h4vm1pmkjc6u"]
 
 [ext_resource type="Script" uid="uid://bcphf833wnt51" path="res://generic_mask.gd" id="1_h87lm"]
-[ext_resource type="Texture2D" uid="uid://hmiryuisnu17" path="res://assets/masks/mask_fujin.png" id="2_magpp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_magpp"]
 radius = 27.45906
@@ -51,7 +50,6 @@ mask_element = 2
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1895112890]
 modulate = Color(0.39215687, 0.58431375, 0.92941177, 1)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_magpp")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1098973325]
 collision_layer = 4
