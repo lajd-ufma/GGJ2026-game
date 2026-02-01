@@ -6,7 +6,7 @@ enum MaskElement {VENTO, FOGO, AGUA, SOMBRA}
 var mask_vento := preload("res://assets/masks/mask_fujin.png")
 var mask_fogo := preload("res://assets/masks/mask_kagutsuchi.png")
 var mask_escuridao := preload("res://assets/masks/mask_izanami.png")
-#var mask_vento := preload("res://assets/masks/mask_fujin.png")
+var mask_agua := preload("res://assets/masks/mask_suijin.png")
 
 @export var mask_element: MaskElement:
 	set(value):
@@ -31,6 +31,7 @@ func _update_sprite():
 			sprite.texture = mask_fogo
 		MaskElement.AGUA:
 			sprite.modulate = Color.CORNFLOWER_BLUE
+			sprite.texture = mask_agua
 		MaskElement.SOMBRA:
 			sprite.modulate = Color.REBECCA_PURPLE
 			sprite.texture = mask_escuridao

@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name BaseCaracter
 
 @export_category("Variables")
-@export var _move_speed := 200.0
+@export var _move_speed := 250.0
 @export var _dash_speed := 900.0
 @export var _dash_time := 0.15
 
@@ -94,7 +94,8 @@ func _input(event):
 			shoot()
 		if pode_dar_dash:
 			start_dash()
-
+	if event.is_action_pressed("restart"):
+		get_tree().reload_current_scene()
 func _physics_process(delta: float) -> void:
 	if is_dashing:
 		velocity = dash_direction * _dash_speed

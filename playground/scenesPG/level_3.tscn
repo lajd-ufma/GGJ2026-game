@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bkvu5ombl3e2t" path="res://playground/actorsPG/portao.tscn" id="5_lyhxg"]
 [ext_resource type="PackedScene" uid="uid://h4vm1pmkjc6u" path="res://generic_mask.tscn" id="5_rix16"]
 [ext_resource type="PackedScene" uid="uid://cq4r5hd3cwbmi" path="res://playground/actorsPG/chave.tscn" id="6_dh8n7"]
+[ext_resource type="FontFile" uid="uid://y7odnc4gyphw" path="res://assets/Asimovian/Asimovian-Regular.ttf" id="8_dh8n7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dh8n7"]
 texture = ExtResource("2_lyhxg")
@@ -15,6 +16,13 @@ texture_region_size = Vector2i(512, 512)
 
 [sub_resource type="TileSet" id="TileSet_iegnt"]
 sources/0 = SubResource("TileSetAtlasSource_dh8n7")
+
+[sub_resource type="LabelSettings" id="LabelSettings_iegnt"]
+font = ExtResource("8_dh8n7")
+font_size = 32
+font_color = Color(0.9999998, 0.3228036, 0.15556836, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="level3" type="Node2D" unique_id=826593599]
 
@@ -88,3 +96,14 @@ next_scene_path = "res://playground/scenesPG/level_4.tscn"
 
 [node name="chave" parent="." unique_id=422720259 instance=ExtResource("6_dh8n7")]
 position = Vector2(640, 128)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1457744762]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=810398323]
+offset_left = 87.0
+offset_top = 318.0
+offset_right = 511.0
+offset_bottom = 447.0
+text = "Coloque a Máscara Kagutsuchi 
+   para poder usar o fogo"
+label_settings = SubResource("LabelSettings_iegnt")
