@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cq4r5hd3cwbmi" path="res://playground/actorsPG/chave.tscn" id="2_mnlx1"]
 [ext_resource type="PackedScene" uid="uid://bkvu5ombl3e2t" path="res://playground/actorsPG/portao.tscn" id="3_djr5j"]
 [ext_resource type="PackedScene" uid="uid://dsa5lexnsuvpr" path="res://playground/actorsPG/block.tscn" id="4_klbxv"]
-[ext_resource type="PackedScene" path="res://generic_mask.tscn" id="5_gw57w"]
+[ext_resource type="PackedScene" uid="uid://h4vm1pmkjc6u" path="res://generic_mask.tscn" id="5_gw57w"]
 [ext_resource type="PackedScene" uid="uid://eoecly782d2v" path="res://playground/scenesPG/cipo.tscn" id="6_mnlx1"]
 
 [node name="level6" type="Node2D" unique_id=1502414711]
@@ -30,6 +30,7 @@ position = Vector2(508, 115)
 
 [node name="portao" parent="." unique_id=964659488 instance=ExtResource("3_djr5j")]
 position = Vector2(1105, 350)
+next_scene_path = "res://playground/scenesPG/level_7.tscn"
 
 [node name="Block" parent="." unique_id=857622503 instance=ExtResource("4_klbxv")]
 position = Vector2(645, 150)

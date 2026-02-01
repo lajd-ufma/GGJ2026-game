@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://byjhctfkndtwp" path="res://playground/scenesPG/agua.tres" id="2_y5hvx"]
 [ext_resource type="Texture2D" uid="uid://n3v8mt8vle4u" path="res://assets/sprite_door/Portal.png" id="3_v77ts"]
 [ext_resource type="PackedScene" uid="uid://de4nhquuknynq" path="res://playground/actorsPG/player.tscn" id="4_y5hvx"]
-[ext_resource type="PackedScene" path="res://generic_mask.tscn" id="5_bqj8s"]
+[ext_resource type="PackedScene" uid="uid://h4vm1pmkjc6u" path="res://generic_mask.tscn" id="5_bqj8s"]
 [ext_resource type="PackedScene" uid="uid://cq4r5hd3cwbmi" path="res://playground/actorsPG/chave.tscn" id="5_v77ts"]
 [ext_resource type="PackedScene" uid="uid://bkvu5ombl3e2t" path="res://playground/actorsPG/portao.tscn" id="6_y2x4l"]
 
@@ -53,4 +53,4 @@ position = Vector2(56, 424)
 
 [node name="portao" parent="." unique_id=964659488 instance=ExtResource("6_y2x4l")]
 position = Vector2(1184, 720)
-next_scene_path = "C:/Users/super/OneDrive/Documentos/GitHub/GGJ2026-game/playground/scenesPG/level_3.tscn"
+next_scene_path = "res://playground/scenesPG/level_3.tscn"
