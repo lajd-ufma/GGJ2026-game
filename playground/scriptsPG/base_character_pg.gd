@@ -31,6 +31,7 @@ var dash_timer := 0.0
 var dash_direction := Vector2.ZERO
 
 func _ready() -> void:
+	print(scale)
 	pegou_mascara.connect(mudar_mask_element)
 
 func mudar_mask_element(element):
@@ -59,7 +60,7 @@ func mudar_mask_element(element):
 		"FOGO":
 			tween_change_color.tween_property(self, "modulate", Color.DARK_ORANGE, 1)
 			set_pode_atirar(true)
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if raycast_l.is_colliding() or raycast_r.is_colliding():
 		z_index=2
 	else:

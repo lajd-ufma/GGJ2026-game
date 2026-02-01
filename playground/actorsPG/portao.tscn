@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://bkvu5ombl3e2t"]
+
+[ext_resource type="Script" uid="uid://ljk436t5n5c0" path="res://playground/actorsPG/portao.gd" id="1_3ou5s"]
+[ext_resource type="Texture2D" uid="uid://n3v8mt8vle4u" path="res://assets/sprite_door/Portal.png" id="1_sxg5s"]
+
+[sub_resource type="Animation" id="Animation_3ou5s"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(6, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_sxg5s")]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_71wuw"]
+resource_name = "opening"
+length = 0.6
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(6, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_sxg5s")]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.016666668, -0.16666667, 0, 0, 2, -0.016666668, -0.16666667, 0, 0, 3, -0.01666667, -0.16666667, 0, 0, 4, -0.016666666, -0.16666667, 0, 0, 5, -0.016666666, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qudo6"]
+_data = {
+&"RESET": SubResource("Animation_3ou5s"),
+&"opening": SubResource("Animation_71wuw")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ou5s"]
+size = Vector2(96, 96)
+
+[node name="portao" type="Node2D" unique_id=964659488 groups=["portal"]]
+script = ExtResource("1_3ou5s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=979172816]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_sxg5s")
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1028506291]
+libraries/ = SubResource("AnimationLibrary_qudo6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1414589844]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=311758483]
+shape = SubResource("RectangleShape2D_3ou5s")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

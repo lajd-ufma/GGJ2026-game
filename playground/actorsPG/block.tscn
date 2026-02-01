@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dsa5lexnsuvpr"]
 
-[ext_resource type="Script" uid="uid://xsr71fvl1ua" path="res://playground/scriptsPG/block.gd" id="1_2xesk"]
 [ext_resource type="Texture2D" uid="uid://cmyty7alrffcu" path="res://icon.svg" id="1_bxkrq"]
+[ext_resource type="Script" path="res://playground/scriptsPG/block.gd" id="1_kl5gq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xesk"]
 size = Vector2(150, 153)
@@ -10,13 +10,14 @@ size = Vector2(150, 153)
 size = Vector2(127, 127)
 
 [node name="Block" type="Node2D" unique_id=857622503]
-script = ExtResource("1_2xesk")
+script = ExtResource("1_kl5gq")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1261224743]
 collision_layer = 16
 collision_mask = 43
 
 [node name="Sprite" type="Sprite2D" parent="Area2D" unique_id=761151680]
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_bxkrq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1179916996]
@@ -31,11 +32,12 @@ collision_mask = 43
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=448785546]
 position = Vector2(-0.5, -0.5)
+scale = Vector2(0.75, 0.75)
 shape = SubResource("RectangleShape2D_id6cy")
 debug_color = Color(5.1499906e-06, 0.6300494, 0.47968268, 0.41960785)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1922163499]
-target_position = Vector2(0, 70)
+target_position = Vector2(0, 48)
 collision_mask = 10
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
