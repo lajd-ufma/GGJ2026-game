@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://cvsqklaxyct54"]
 
 [ext_resource type="Script" uid="uid://fliau7inoqnu" path="res://menu.gd" id="1_7rdgn"]
+[ext_resource type="Texture2D" uid="uid://db0g3a4ebydo0" path="res://assets/background/imagem_tiles.png" id="2_ytr4m"]
+[ext_resource type="Texture2D" uid="uid://hmiryuisnu17" path="res://assets/masks/mask_fujin.png" id="3_l48gv"]
+[ext_resource type="Texture2D" uid="uid://bimyd2uuajof6" path="res://assets/masks/mask_izanami.png" id="4_ecwwl"]
+[ext_resource type="Texture2D" uid="uid://qq4oo68p55mg" path="res://assets/masks/mask_kagutsuchi.png" id="5_kk3ma"]
+[ext_resource type="Texture2D" uid="uid://c3lafjsu80vrb" path="res://assets/title.png" id="6_l48gv"]
 
 [node name="menu" type="Control" unique_id=1865453434]
 layout_mode = 3
@@ -16,6 +21,152 @@ layout_mode = 0
 offset_right = 1277.0
 offset_bottom = 772.0
 color = Color(0.08627451, 0.011764706, 0.20392157, 1)
+
+[node name="bg\'s" type="Node2D" parent="." unique_id=1067845891]
+modulate = Color(0.5605299, 0.701807, 0.91872835, 1)
+
+[node name="bg" type="Sprite2D" parent="bg\'s" unique_id=1028472559]
+position = Vector2(134.4, 635.4)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+frame = 2
+
+[node name="bg2" type="Sprite2D" parent="bg\'s" unique_id=723434369]
+position = Vector2(1145.4, 635.4)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+frame = 5
+
+[node name="bg3" type="Sprite2D" parent="bg\'s" unique_id=251691251]
+position = Vector2(134.4, 382.4)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+frame = 1
+
+[node name="bg4" type="Sprite2D" parent="bg\'s" unique_id=709151673]
+position = Vector2(134.4, 126.399994)
+rotation = 1.5707964
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+frame = 2
+
+[node name="bg5" type="Sprite2D" parent="bg\'s" unique_id=1572961508]
+position = Vector2(1145.4, 126.399994)
+rotation = -1.5707964
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+frame = 5
+
+[node name="bg6" type="Sprite2D" parent="bg\'s" unique_id=329229076]
+position = Vector2(1145.4, 380.4)
+rotation = -3.1415925
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+frame = 1
+
+[node name="bg9" type="Sprite2D" parent="bg\'s" unique_id=112239224]
+position = Vector2(639.4, 635.4)
+rotation = -1.5707964
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+frame = 1
+
+[node name="bg10" type="Sprite2D" parent="bg\'s" unique_id=1345668303]
+position = Vector2(892.4, 635.4)
+rotation = -1.5707964
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+frame = 1
+
+[node name="bg11" type="Sprite2D" parent="bg\'s" unique_id=1981944647]
+position = Vector2(388.4, 635.4)
+rotation = -1.5707964
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+frame = 1
+
+[node name="bg12" type="Sprite2D" parent="bg\'s" unique_id=454888350]
+position = Vector2(382.4, 126.399994)
+rotation = 1.5707964
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+frame = 1
+
+[node name="bg13" type="Sprite2D" parent="bg\'s" unique_id=1503123727]
+position = Vector2(638.4, 126.399994)
+rotation = 1.5707964
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+frame = 1
+
+[node name="bg14" type="Sprite2D" parent="bg\'s" unique_id=286673359]
+position = Vector2(894.4, 126.399994)
+rotation = 1.5707964
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+frame = 1
+
+[node name="bg15" type="Sprite2D" parent="bg\'s" unique_id=1975833071]
+position = Vector2(390.4, 382.4)
+rotation = 1.5707964
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+
+[node name="bg16" type="Sprite2D" parent="bg\'s" unique_id=1887251240]
+position = Vector2(902.4, 382.4)
+rotation = 1.5707964
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+
+[node name="bg17" type="Sprite2D" parent="bg\'s" unique_id=1284327841]
+position = Vector2(646.4, 382.4)
+rotation = 1.5707964
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_ytr4m")
+hframes = 7
+vframes = 2
+
+[node name="masks" type="Node2D" parent="." unique_id=892006186]
+
+[node name="Sprite2D" type="Sprite2D" parent="masks" unique_id=671987179]
+position = Vector2(1010, 377)
+texture = ExtResource("3_l48gv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="masks" unique_id=1338216124]
+position = Vector2(616, 600)
+texture = ExtResource("4_ecwwl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="masks" unique_id=1526426569]
+position = Vector2(250, 389)
+texture = ExtResource("5_kk3ma")
 
 [node name="button_start" type="Button" parent="." unique_id=839722650]
 layout_mode = 1
@@ -46,6 +197,11 @@ offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1621103133]
+position = Vector2(613, 176)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_l48gv")
 
 [connection signal="pressed" from="button_start" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="button_quit" to="." method="_on_button_quit_pressed"]
