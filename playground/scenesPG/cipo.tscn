@@ -8,7 +8,7 @@ size = Vector2(20, 37)
 [sub_resource type="Gradient" id="Gradient_jn31i"]
 colors = PackedColorArray(0.9647059, 0.24313726, 0, 1, 1, 1, 0.14509805, 1)
 
-[node name="cipo" type="StaticBody2D" unique_id=858177106]
+[node name="cipo" type="StaticBody2D" unique_id=858177106 groups=["cipo"]]
 scale = Vector2(2, 2)
 collision_layer = 128
 script = ExtResource("1_jn31i")

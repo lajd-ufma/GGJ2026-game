@@ -14,7 +14,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	direction = Vector2.ZERO
-	if body.name == "cipo":
+	if body.is_in_group("cipo"):
+		print("sadas")
 		body.emit_signal("tomou_fogo")
 	queue_free()
 #

@@ -3,7 +3,7 @@ extends Node
 var audio_player: AudioStreamPlayer
 
 # Carregue sua música aqui
-var background_music = preload("res://playground/actorsPG/final_music.tscn")
+var background_music = preload("res://playground/actorsPG/background_music.tscn")
 
 func _ready():
 	# Criamos o player de áudio via código
