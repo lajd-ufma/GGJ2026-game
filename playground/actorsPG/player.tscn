@@ -294,8 +294,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4wguv"]
-radius = 6.5
-height = 29.0
+radius = 7.5
+height = 20.5
 
 [node name="player" type="CharacterBody2D" unique_id=1362530387 node_paths=PackedStringArray("_animation", "_sprite2D") groups=["player"]]
 z_index = 1
@@ -328,6 +328,7 @@ libraries/ = SubResource("AnimationLibrary_p75wg")
 autoplay = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=161128430]
-position = Vector2(0, 1)
+position = Vector2(0, 26.5)
+rotation = 1.5707964
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_4wguv")
