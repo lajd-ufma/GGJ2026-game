@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bkvu5ombl3e2t" path="res://playground/actorsPG/portao.tscn" id="3_nl5wh"]
 [ext_resource type="Texture2D" uid="uid://n3v8mt8vle4u" path="res://assets/sprite_door/Portal.png" id="4_1kh1x"]
 [ext_resource type="PackedScene" uid="uid://de4nhquuknynq" path="res://playground/actorsPG/player.tscn" id="4_s3656"]
-[ext_resource type="PackedScene" path="res://generic_mask.tscn" id="5_hk3bm"]
+[ext_resource type="PackedScene" uid="uid://h4vm1pmkjc6u" path="res://generic_mask.tscn" id="5_hk3bm"]
 [ext_resource type="PackedScene" uid="uid://eoecly782d2v" path="res://playground/scenesPG/cipo.tscn" id="5_mmeug"]
 [ext_resource type="PackedScene" uid="uid://cq4r5hd3cwbmi" path="res://playground/actorsPG/chave.tscn" id="7_1kh1x"]
 
@@ -19,6 +19,14 @@ sources/0 = SubResource("TileSetAtlasSource_ebwbb")
 
 [node name="level4" type="Node2D" unique_id=1502414711]
 
+<<<<<<< HEAD
+=======
+[node name="portao" parent="." unique_id=964659488 instance=ExtResource("3_nl5wh")]
+z_index = 1
+position = Vector2(1226, 715)
+next_scene_path = "res://playground/scenesPG/level_5.tscn"
+
+>>>>>>> 6f2aa74eaf27bf3a92c8508e1566ddf2f98530d3
 [node name="terreno" type="Node2D" parent="." unique_id=2050677777]
 
 [node name="chao" type="TileMapLayer" parent="terreno" unique_id=606379716]
@@ -51,6 +59,10 @@ next_scene_path = "C:/Users/super/OneDrive/Documentos/GitHub/GGJ2026-game/playgr
 position = Vector2(771.00006, 190)
 scale = Vector2(1.5, 1.5)
 mask_element = 1
+
+[node name="generic_mask3" parent="." unique_id=120727531 instance=ExtResource("5_hk3bm")]
+position = Vector2(804, 242)
+scale = Vector2(1.5, 1.5)
 
 [node name="generic_mask2" parent="." unique_id=1381002373 instance=ExtResource("5_hk3bm")]
 position = Vector2(674, 535)

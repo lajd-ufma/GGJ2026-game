@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://17sremjji3s7"]
+
+[ext_resource type="Script" uid="uid://e01hrne8h37b" path="res://playground/actorsPG/final.gd" id="1_ah6t8"]
+[ext_resource type="PackedScene" uid="uid://dmboxh3ps5d73" path="res://playground/actorsPG/final_music.tscn" id="2_1alfm"]
+
+[node name="final" type="Control" unique_id=86178271]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ah6t8")
+
+[node name="final_music" parent="." unique_id=376132385 instance=ExtResource("2_1alfm")]

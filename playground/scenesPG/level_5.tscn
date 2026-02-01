@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://de4nhquuknynq" path="res://playground/actorsPG/player.tscn" id="4_o8x44"]
 [ext_resource type="PackedScene" uid="uid://dsa5lexnsuvpr" path="res://playground/actorsPG/block.tscn" id="4_t3wur"]
 [ext_resource type="PackedScene" uid="uid://bkvu5ombl3e2t" path="res://playground/actorsPG/portao.tscn" id="5_50wv5"]
-[ext_resource type="PackedScene" path="res://generic_mask.tscn" id="5_vrl56"]
+[ext_resource type="PackedScene" uid="uid://h4vm1pmkjc6u" path="res://generic_mask.tscn" id="5_vrl56"]
 [ext_resource type="PackedScene" uid="uid://cq4r5hd3cwbmi" path="res://playground/actorsPG/chave.tscn" id="6_dcb7p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dcb7p"]

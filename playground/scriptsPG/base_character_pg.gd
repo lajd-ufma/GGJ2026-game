@@ -146,7 +146,10 @@ func shoot() -> void:
 	if bullet_scene == null:
 		return
 	if pode_atirar:
+		pode_atirar = false
 		var bullet = bullet_scene.instantiate()
 		bullet.global_position = global_position
 		bullet.direction = last_direction
 		get_parent().add_child(bullet)
+		await get_tree().create_timer(0.5).timeout
+		pode_atirar = true

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://eoecly782d2v" path="res://playground/scenesPG/cipo.tscn" id="4_rix16"]
 [ext_resource type="PackedScene" uid="uid://de4nhquuknynq" path="res://playground/actorsPG/player.tscn" id="4_yb3hf"]
 [ext_resource type="PackedScene" uid="uid://bkvu5ombl3e2t" path="res://playground/actorsPG/portao.tscn" id="5_lyhxg"]
-[ext_resource type="PackedScene" path="res://generic_mask.tscn" id="5_rix16"]
+[ext_resource type="PackedScene" uid="uid://h4vm1pmkjc6u" path="res://generic_mask.tscn" id="5_rix16"]
 [ext_resource type="PackedScene" uid="uid://cq4r5hd3cwbmi" path="res://playground/actorsPG/chave.tscn" id="6_dh8n7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dh8n7"]
@@ -80,7 +80,11 @@ rotation = 1.5707964
 
 [node name="portao" parent="." unique_id=964659488 instance=ExtResource("5_lyhxg")]
 position = Vector2(1168, 400)
+<<<<<<< HEAD
 next_scene_path = "C:/Users/super/OneDrive/Documentos/GitHub/GGJ2026-game/playground/scenesPG/level_4.tscn"
+=======
+next_scene_path = "res://playground/scenesPG/level_4.tscn"
+>>>>>>> 6f2aa74eaf27bf3a92c8508e1566ddf2f98530d3
 
 [node name="chave" parent="." unique_id=422720259 instance=ExtResource("6_dh8n7")]
 position = Vector2(640, 128)

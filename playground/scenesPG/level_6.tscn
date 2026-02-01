@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bkvu5ombl3e2t" path="res://playground/actorsPG/portao.tscn" id="3_djr5j"]
 [ext_resource type="Texture2D" uid="uid://n3v8mt8vle4u" path="res://assets/sprite_door/Portal.png" id="3_fghum"]
 [ext_resource type="PackedScene" uid="uid://dsa5lexnsuvpr" path="res://playground/actorsPG/block.tscn" id="4_klbxv"]
-[ext_resource type="PackedScene" path="res://generic_mask.tscn" id="5_gw57w"]
+[ext_resource type="PackedScene" uid="uid://h4vm1pmkjc6u" path="res://generic_mask.tscn" id="5_gw57w"]
 [ext_resource type="PackedScene" uid="uid://eoecly782d2v" path="res://playground/scenesPG/cipo.tscn" id="6_mnlx1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_23hjb"]
