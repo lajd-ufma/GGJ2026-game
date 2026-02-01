@@ -3,20 +3,23 @@
 [ext_resource type="Script" uid="uid://bcwhrskonmx53" path="res://playground/scriptsPG/button.gd" id="1_v35pl"]
 [ext_resource type="Texture2D" uid="uid://byuvwssq2f8x2" path="res://assets/sprite_que_contem_a_caixa_plataforma.png" id="2_v35pl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wgf7"]
-size = Vector2(111, 94)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v35pl"]
+radius = 69.0
+height = 172.0
 
 [node name="Button" type="Area2D" unique_id=37416142]
 collision_layer = 256
-collision_mask = 17
+collision_mask = 16
 script = ExtResource("1_v35pl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1216243244]
 texture = ExtResource("2_v35pl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123233609]
-position = Vector2(-6, 2)
-shape = SubResource("RectangleShape2D_0wgf7")
+position = Vector2(-6, 6)
+rotation = 1.5707964
+scale = Vector2(0.85321176, 0.85321176)
+shape = SubResource("CapsuleShape2D_v35pl")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

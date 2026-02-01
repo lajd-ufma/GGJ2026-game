@@ -78,7 +78,9 @@ scale = Vector2(1, 1)
 [node name="chave" parent="." unique_id=422720259 instance=ExtResource("8_k60fc")]
 position = Vector2(126, 662)
 
-[node name="Label" type="Label" parent="." unique_id=908405913]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2110654295]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=908405913]
 offset_left = 28.0
 offset_top = 69.0
 offset_right = 526.0

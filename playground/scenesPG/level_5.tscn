@@ -46,15 +46,6 @@ scale = Vector2(0.25, 0.25)
 tile_map_data = PackedByteArray("AAAfAGAAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_xjy04")
 
-[node name="Label" type="Label" parent="." unique_id=1641793725]
-offset_left = 420.0
-offset_top = 308.0
-offset_right = 823.0
-offset_bottom = 454.0
-text = "Coloque a Máscara Fuijin 
-     para mover blocos"
-label_settings = SubResource("LabelSettings_rhx5l")
-
 [node name="generic_mask" parent="." unique_id=241255481 instance=ExtResource("5_vrl56")]
 position = Vector2(866, 630)
 mask_element = 0
@@ -88,3 +79,14 @@ scale = Vector2(0.49, 0.25)
 
 [node name="Block" parent="." unique_id=857622503 instance=ExtResource("4_t3wur")]
 position = Vector2(1040, 206)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=502606914]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1641793725]
+offset_left = 420.0
+offset_top = 308.0
+offset_right = 823.0
+offset_bottom = 454.0
+text = "Coloque a Máscara Fuijin 
+     para mover blocos"
+label_settings = SubResource("LabelSettings_rhx5l")
