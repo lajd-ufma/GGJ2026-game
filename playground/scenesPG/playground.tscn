@@ -2,12 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://ccp31fuyyqtly" path="res://playground/scenesPG/terrain_manager.tscn" id="1_mm8fh"]
 [ext_resource type="PackedScene" uid="uid://dsa5lexnsuvpr" path="res://playground/actorsPG/block.tscn" id="4_xx4lu"]
-[ext_resource type="PackedScene" uid="uid://dc5v12gywcxps" path="res://playground/actorsPG/player.tscn" id="5_1kgxw"]
+[ext_resource type="PackedScene" uid="uid://de4nhquuknynq" path="res://playground/actorsPG/player.tscn" id="5_1kgxw"]
 [ext_resource type="PackedScene" uid="uid://blvypiedpnhk6" path="res://playground/actorsPG/wall.tscn" id="5_t4yo2"]
 [ext_resource type="PackedScene" uid="uid://h4vm1pmkjc6u" path="res://generic_mask.tscn" id="6_1kgxw"]
 [ext_resource type="PackedScene" uid="uid://cq4r5hd3cwbmi" path="res://playground/actorsPG/chave.tscn" id="6_2dil7"]
 [ext_resource type="PackedScene" uid="uid://bkvu5ombl3e2t" path="res://playground/actorsPG/portao.tscn" id="7_3hal7"]
 [ext_resource type="PackedScene" uid="uid://eoecly782d2v" path="res://playground/scenesPG/cipo.tscn" id="8_3hal7"]
+[ext_resource type="PackedScene" uid="uid://d3qcabes4aq37" path="res://playground/scenesPG/button.tscn" id="9_fo7qa"]
 
 [node name="Playground" type="Node2D" unique_id=772824261]
 
@@ -50,3 +51,6 @@ next_scene_path = "res://playground/scenesPG/playground.tscn"
 
 [node name="cipo" parent="." unique_id=858177106 instance=ExtResource("8_3hal7")]
 position = Vector2(403, 234)
+
+[node name="Button" parent="." unique_id=37416142 instance=ExtResource("9_fo7qa")]
+position = Vector2(879, 325)
