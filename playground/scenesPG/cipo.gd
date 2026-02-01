@@ -9,11 +9,9 @@ func _ready() -> void:
 	tomou_fogo.connect(queimar)
 	
 func queimar():
-	print("ta queimando")
 	particles.emitting = true
 	set_collision_layer_value(8,false)
 	await get_tree().create_timer(7).timeout
 	print("regenera")
 	particles.emitting = false
 	set_collision_layer_value(8,true)
-	print("sadas")
