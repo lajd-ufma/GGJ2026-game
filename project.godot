@@ -92,6 +92,7 @@ dash={
 2d_physics/layer_6="wall"
 2d_physics/layer_7="tree"
 2d_physics/layer_8="cipo"
+2d_physics/layer_9="button"
 
 [rendering]
 

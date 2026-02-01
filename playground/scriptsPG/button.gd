@@ -1,20 +1,16 @@
 extends Area2D
 
-@onready var wall: StaticBody2D = $"../Wall"
-
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+@export var wall: StaticBody2D
 
 func _on_body_entered(body: Node2D) -> void:
-	body.emit_signal("button_hold")
+	if wall == null:
+		print("parede nao adicionada")
+		return
+	print("Wall")
 	wall.emit_signal("button_hold")
 
 func _on_body_exited(body: Node2D) -> void:
-	body.emit_signal("button_free")
+	if wall == null:
+		print("parede nao adicionada")
+		return
 	wall.emit_signal("button_free")

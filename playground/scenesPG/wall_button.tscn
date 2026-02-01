@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cd6lcqdv7ti0c"]
+
+[ext_resource type="Texture2D" uid="uid://db0g3a4ebydo0" path="res://assets/background/imagem_tiles.png" id="1_h0dg1"]
+[ext_resource type="Script" uid="uid://dk0q4h46s2cxe" path="res://playground/scenesPG/wall_button.gd" id="1_idblc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ync7m"]
+size = Vector2(386, 274)
+
+[node name="WallButton" type="StaticBody2D" unique_id=1000407684]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_idblc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=833430395]
+texture = ExtResource("1_h0dg1")
+region_enabled = true
+region_rect = Rect2(1400, 240, 392, 272)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=653220141]
+position = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_ync7m")
