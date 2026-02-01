@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name BaseCaracter
 
 @export_category("Variables")
-@export var _move_speed := 200.0
+@export var _move_speed := 250.0
 @export var _dash_speed := 900.0
 @export var _dash_time := 0.15
 
