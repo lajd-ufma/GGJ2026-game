@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bwymlqpkxig62"]
+
+[ext_resource type="PackedScene" uid="uid://cntfsr8nfof1l" path="res://playground/actorsPG/base_character_pg.tscn" id="1_0avic"]
+[ext_resource type="PackedScene" uid="uid://b7qksv6pf1oit" path="res://playground/actorsPG/mask.tscn" id="2_mqprk"]
+
+[node name="level8" type="Node2D" unique_id=1637953326]
+
+[node name="terreno" type="Node2D" parent="." unique_id=1628338707]
+
+[node name="chao" type="TileMapLayer" parent="terreno" unique_id=1343082422]
+
+[node name="agua" type="TileMapLayer" parent="terreno" unique_id=1506153761]
+
+[node name="parede" type="TileMapLayer" parent="terreno" unique_id=600688336]
+
+[node name="BaseCharacter" parent="." unique_id=1114739500 instance=ExtResource("1_0avic")]
+position = Vector2(138, 202)
+
+[node name="Mask" parent="." unique_id=1907293852 instance=ExtResource("2_mqprk")]
+position = Vector2(688.99994, 152)
+scale = Vector2(0.1, 0.1)

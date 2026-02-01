@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://lahb7ndepwhu"]
+
+[node name="level7" type="Node2D" unique_id=1502414711]
+
+[node name="terreno" type="Node2D" parent="." unique_id=730916741]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="terreno" unique_id=1703813846]
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="terreno" unique_id=953071106]
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="terreno" unique_id=2055079139]

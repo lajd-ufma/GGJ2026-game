@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dc5v12gywcxps"]
+[gd_scene format=3 uid="uid://de4nhquuknynq"]
 
 [ext_resource type="Script" uid="uid://b6vre4o6y3ndj" path="res://playground/scriptsPG/base_character_pg.gd" id="1_4wguv"]
 [ext_resource type="Texture2D" uid="uid://dve3uwr31p2up" path="res://assets/sprite_mask/IDLE/idle_mask.png" id="1_k1mh1"]
@@ -295,7 +295,7 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4wguv"]
 radius = 6.5
-height = 21.0
+height = 29.0
 
 [node name="player" type="CharacterBody2D" unique_id=1362530387 node_paths=PackedStringArray("_animation", "_sprite2D") groups=["player"]]
 z_index = 1
@@ -319,7 +319,7 @@ target_position = Vector2(2.861023e-06, 36)
 collision_mask = 32
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=462706298]
-scale = Vector2(2, 2)
+scale = Vector2(2.15, 2.15)
 texture = ExtResource("1_k1mh1")
 hframes = 8
 
@@ -328,6 +328,6 @@ libraries/ = SubResource("AnimationLibrary_p75wg")
 autoplay = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=161128430]
-position = Vector2(0, 4)
+position = Vector2(0, 1)
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_4wguv")

@@ -31,6 +31,7 @@ var dash_timer := 0.0
 var dash_direction := Vector2.ZERO
 
 func _ready() -> void:
+	print(scale)
 	pegou_mascara.connect(mudar_mask_element)
 
 func mudar_mask_element(element):
