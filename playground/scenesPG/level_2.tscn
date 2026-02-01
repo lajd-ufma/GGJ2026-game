@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://n3v8mt8vle4u" path="res://assets/sprite_door/Portal.png" id="3_v77ts"]
 [ext_resource type="PackedScene" uid="uid://de4nhquuknynq" path="res://playground/actorsPG/player.tscn" id="4_y5hvx"]
 [ext_resource type="PackedScene" path="res://generic_mask.tscn" id="5_bqj8s"]
-[ext_resource type="PackedScene" path="res://playground/actorsPG/chave.tscn" id="5_v77ts"]
-[ext_resource type="PackedScene" path="res://playground/actorsPG/portao.tscn" id="6_y2x4l"]
+[ext_resource type="PackedScene" uid="uid://cq4r5hd3cwbmi" path="res://playground/actorsPG/chave.tscn" id="5_v77ts"]
+[ext_resource type="PackedScene" uid="uid://bkvu5ombl3e2t" path="res://playground/actorsPG/portao.tscn" id="6_y2x4l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2x4l"]
 texture = ExtResource("3_v77ts")
@@ -42,6 +42,7 @@ tile_set = SubResource("TileSet_rt3hb")
 
 [node name="player" parent="." unique_id=1362530387 instance=ExtResource("4_y5hvx")]
 position = Vector2(216, 672)
+scale = Vector2(1, 1)
 
 [node name="generic_mask" parent="." unique_id=241255481 instance=ExtResource("5_bqj8s")]
 position = Vector2(112, 104)

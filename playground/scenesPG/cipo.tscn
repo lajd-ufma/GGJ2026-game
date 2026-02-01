@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://eoecly782d2v"]
+
+[ext_resource type="Script" uid="uid://dglqiiixsogky" path="res://playground/scenesPG/cipo.gd" id="1_jn31i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrnup"]
+size = Vector2(20, 37)
+
+[sub_resource type="Gradient" id="Gradient_jn31i"]
+colors = PackedColorArray(0.9647059, 0.24313726, 0, 1, 1, 1, 0.14509805, 1)
+
+[node name="cipo" type="StaticBody2D" unique_id=858177106]
+scale = Vector2(2, 2)
+collision_layer = 128
+script = ExtResource("1_jn31i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1559100811]
+offset_left = -9.0
+offset_top = -19.0
+offset_right = 10.0
+offset_bottom = 18.0
+color = Color(0.05882353, 1, 0.31764707, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=712343469]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_mrnup")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=402114396]
+emitting = false
+amount = 16
+explosiveness = 0.2
+randomness = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(10, 18)
+gravity = Vector2(5, -15)
+scale_amount_min = 8.0
+scale_amount_max = 10.0
+color = Color(1, 0.61960787, 0.12941177, 1)
+color_ramp = SubResource("Gradient_jn31i")

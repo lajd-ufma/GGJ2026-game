@@ -298,7 +298,9 @@ radius = 6.5
 height = 29.0
 
 [node name="player" type="CharacterBody2D" unique_id=1362530387 node_paths=PackedStringArray("_animation", "_sprite2D") groups=["player"]]
-collision_mask = 62
+z_index = 1
+scale = Vector2(2, 2)
+collision_mask = 254
 script = ExtResource("1_4wguv")
 _animation = NodePath("AnimationPlayer")
 _sprite2D = NodePath("Sprite2D")

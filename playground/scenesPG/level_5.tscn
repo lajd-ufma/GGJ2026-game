@@ -3,9 +3,9 @@
 [ext_resource type="TileSet" uid="uid://5kdp2uw5u6tn" path="res://playground/scenesPG/chao.tres" id="1_o8x44"]
 [ext_resource type="PackedScene" uid="uid://de4nhquuknynq" path="res://playground/actorsPG/player.tscn" id="4_o8x44"]
 [ext_resource type="PackedScene" uid="uid://dsa5lexnsuvpr" path="res://playground/actorsPG/block.tscn" id="4_t3wur"]
-[ext_resource type="PackedScene" path="res://playground/actorsPG/portao.tscn" id="5_50wv5"]
+[ext_resource type="PackedScene" uid="uid://bkvu5ombl3e2t" path="res://playground/actorsPG/portao.tscn" id="5_50wv5"]
 [ext_resource type="PackedScene" path="res://generic_mask.tscn" id="5_vrl56"]
-[ext_resource type="PackedScene" path="res://playground/actorsPG/chave.tscn" id="6_dcb7p"]
+[ext_resource type="PackedScene" uid="uid://cq4r5hd3cwbmi" path="res://playground/actorsPG/chave.tscn" id="6_dcb7p"]
 
 [node name="level5" type="Node2D" unique_id=1502414711]
 
@@ -30,6 +30,7 @@ position = Vector2(488, 512)
 
 [node name="player" parent="." unique_id=1362530387 instance=ExtResource("4_o8x44")]
 position = Vector2(320, 513)
+scale = Vector2(1, 1)
 
 [node name="portao" parent="." unique_id=964659488 instance=ExtResource("5_50wv5")]
 position = Vector2(1128, 600)

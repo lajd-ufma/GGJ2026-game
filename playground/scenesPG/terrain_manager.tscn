@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bpunttv82gdlx" path="res://playground/assetsPG/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water/Water Rocks_03.png" id="5_he31j"]
 [ext_resource type="Texture2D" uid="uid://ch8lgfgbra46t" path="res://playground/assetsPG/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water/Water Rocks_04.png" id="6_2502j"]
 [ext_resource type="Texture2D" uid="uid://c1ka123jvetye" path="res://playground/assetsPG/Tiny Swords (Free Pack)/Terrain/Tileset/Tilemap_color1.png" id="7_ixuho"]
-[ext_resource type="Texture2D" uid="uid://dlnrm5iki6354" path="res://playground/assetsPG/Tiny Swords (Free Pack)/Terrain/Tileset/Shadow.png" id="8_knwgn"]
-[ext_resource type="Texture2D" uid="uid://cc51j0m3sparu" path="res://playground/assetsPG/Tiny Swords (Free Pack)/Terrain/Tileset/Tilemap_color3.png" id="9_he31j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkpy6"]
 resource_name = "water"
@@ -120,82 +118,6 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/5 = SubResource("TileSetAtlasSource_nnqu1")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2502j"]
-texture = ExtResource("8_knwgn")
-texture_region_size = Vector2i(64, 64)
-1:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_ixuho"]
-tile_size = Vector2i(64, 64)
-sources/0 = SubResource("TileSetAtlasSource_2502j")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wf3u8"]
-texture = ExtResource("7_ixuho")
-texture_region_size = Vector2i(64, 64)
-5:3/0 = 0
-5:4/0 = 0
-5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-6:4/0 = 0
-6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-6:3/0 = 0
-7:3/0 = 0
-7:4/0 = 0
-7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-8:3/0 = 0
-8:4/0 = 0
-8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-6:5/0 = 0
-6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-5:5/0 = 0
-5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-7:5/0 = 0
-7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-8:5/0 = 0
-8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-0:5/0 = 0
-0:4/0 = 0
-3:5/0 = 0
-3:4/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_xnwoc"]
-tile_size = Vector2i(64, 64)
-physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 17
-sources/1 = SubResource("TileSetAtlasSource_wf3u8")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8i7f5"]
-texture = ExtResource("9_he31j")
-texture_region_size = Vector2i(64, 64)
-5:0/0 = 0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, -15.8053, -15.2408, -14.6763, -14.6763, 32, -32, 32)
-5:1/0 = 0
-5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -12.9829, -32, -15.2408, 32, -32, 32)
-5:2/0 = 0
-6:2/0 = 0
-6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 32, -32, 32, -32, 12.4184, 32, 13.5474)
-6:1/0 = 0
-6:0/0 = 0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, -14.1118, -32, -14.1118)
-7:0/0 = 0
-7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, 12.4184, 32, 13.5474, -13.5474, -32, -14.1118)
-7:1/0 = 0
-7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, 12.4184, 32, 12.9829, -32)
-7:2/0 = 0
-7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32, -32, 12.4184, 12.9829, 12.9829, 12.9829, -32)
-8:2/0 = 0
-8:1/0 = 0
-8:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_nnqu1"]
-tile_size = Vector2i(64, 64)
-physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 17
-sources/0 = SubResource("TileSetAtlasSource_8i7f5")
-
 [node name="TerrainManager" type="Node2D" unique_id=768857438]
 
 [node name="Water" type="TileMapLayer" parent="." unique_id=1427108761]
@@ -210,15 +132,3 @@ tile_set = SubResource("TileSet_8i7f5")
 [node name="FlatSand" type="TileMapLayer" parent="." unique_id=1725506953]
 tile_map_data = PackedByteArray("AAAFAAIABQAFAAAAAAAFAAMABQAFAAEAAAAFAAQABQAFAAEAAAAFAAUABQAFAAIAAAAGAAYABQAFAAIAAAAHAAcABQAFAAIAAAAIAAgABQAFAAIAAAAJAAgABQAGAAIAAAAKAAgABQAGAAIAAAALAAgABQAGAAIAAAAMAAgABQAHAAIAAAANAAcABQAHAAIAAAAOAAYABQAHAAIAAAAPAAUABQAHAAIAAAAQAAQABQAHAAIAAAAQAAMABQAHAAEAAAAQAAIABQAHAAEAAAAQAAEABQAHAAEAAAAQAAAABQAHAAAAAAAPAAAABQAGAAAAAAAOAAAABQAGAAAAAAANAAAABQAGAAAAAAAMAAAABQAGAAAAAAALAAAABQAGAAAAAAAKAAAABQAFAAAAAAAJAAEABQAFAAAAAAAIAAIABQAGAAAAAAAHAAIABQAGAAAAAAAGAAIABQAGAAAAAAAGAAMABQAGAAEAAAAGAAQABQAGAAEAAAAGAAUABQAGAAEAAAAHAAUABQAGAAEAAAAHAAYABQAGAAEAAAAHAAQABQAGAAEAAAAHAAMABQAGAAEAAAAIAAMABQAGAAEAAAAIAAQABQAGAAEAAAAIAAUABQAGAAEAAAAIAAYABQAGAAEAAAAIAAcABQAGAAEAAAAJAAcABQAGAAEAAAAJAAYABQAGAAEAAAAJAAUABQAGAAEAAAAJAAQABQAGAAEAAAAJAAMABQAGAAEAAAAJAAIABQAGAAEAAAAKAAIABQAGAAEAAAAKAAEABQAGAAEAAAAKAAMABQAGAAEAAAAKAAQABQAGAAEAAAAKAAUABQAGAAEAAAAKAAYABQAGAAEAAAAKAAcABQAGAAEAAAALAAcABQAGAAEAAAALAAYABQAGAAEAAAALAAUABQAGAAEAAAALAAQABQAGAAEAAAALAAMABQAGAAEAAAALAAIABQAGAAEAAAALAAEABQAGAAEAAAAMAAEABQAGAAEAAAAMAAIABQAGAAEAAAAMAAMABQAGAAEAAAAMAAQABQAGAAEAAAAMAAUABQAGAAEAAAAMAAYABQAGAAEAAAAMAAcABQAGAAEAAAANAAYABQAGAAEAAAANAAUABQAGAAEAAAANAAQABQAGAAEAAAAOAAQABQAGAAEAAAAOAAUABQAGAAEAAAAPAAQABQAGAAEAAAAPAAMABQAGAAEAAAAPAAIABQAGAAEAAAAPAAEABQAGAAEAAAAOAAEABQAGAAEAAAAOAAIABQAGAAEAAAANAAIABQAGAAEAAAANAAEABQAGAAEAAAANAAMABQAGAAEAAAAOAAMABQAGAAEAAAA=")
 tile_set = SubResource("TileSet_ni0k2")
-
-[node name="Shadow" type="TileMapLayer" parent="." unique_id=456865853]
-tile_map_data = PackedByteArray("AAAIAAUAAAABAAEAAAAJAAUAAAABAAEAAAAHAAUAAAABAAEAAAAKAAUAAAABAAEAAAALAAUAAAABAAEAAAAMAAUAAAABAAEAAAANAAUAAAABAAEAAAAOAAQAAAABAAEAAAAPAAQAAAABAAEAAAAPAAMAAAABAAEAAAAPAAIAAAABAAEAAAA=")
-tile_set = SubResource("TileSet_ixuho")
-
-[node name="Elevation" type="TileMapLayer" parent="." unique_id=1419904157]
-tile_map_data = PackedByteArray("AAAIAAUAAQAGAAQAAAAJAAUAAQAGAAQAAAAKAAUAAQAGAAQAAAALAAUAAQAGAAQAAAAMAAUAAQAGAAQAAAANAAUAAQAHAAQAAAAOAAQAAQAGAAQAAAAPAAQAAQAHAAQAAAAHAAQAAQAAAAQAAAAHAAUAAQAAAAUAAAA=")
-tile_set = SubResource("TileSet_xnwoc")
-
-[node name="FlatGrass" type="TileMapLayer" parent="." unique_id=134777283]
-tile_map_data = PackedByteArray("AAAIAAQAAAAFAAIAAAAJAAQAAAAGAAIAAAAKAAQAAAAGAAIAAAALAAQAAAAGAAIAAAAMAAQAAAAGAAIAAAANAAQAAAAHAAIAAAAIAAMAAAAFAAAAAAAJAAMAAAAGAAEAAAAJAAIAAAAFAAAAAAAKAAEAAAAFAAAAAAALAAEAAAAGAAAAAAAMAAEAAAAGAAAAAAANAAEAAAAGAAAAAAAOAAEAAAAGAAAAAAAPAAEAAAAHAAAAAAAPAAIAAAAHAAEAAAAPAAMAAAAHAAIAAAAOAAMAAAAGAAIAAAANAAMAAAAGAAEAAAAMAAMAAAAGAAEAAAALAAMAAAAGAAEAAAALAAIAAAAGAAEAAAAKAAIAAAAGAAEAAAAKAAMAAAAGAAEAAAANAAIAAAAGAAEAAAAOAAIAAAAGAAEAAAAMAAIAAAAGAAEAAAA=")
-tile_set = SubResource("TileSet_nnqu1")
