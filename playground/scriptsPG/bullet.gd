@@ -11,14 +11,15 @@ func _ready() -> void:
 	queue_free()
 func _physics_process(delta: float) -> void:
 	global_position += direction * speed * delta
-
+	rotation = direction.angle() + 3* PI / 2
 func _on_body_entered(body: Node2D) -> void:
+	animation_player.play("disappearing")
 	direction = Vector2.ZERO
 	if body.is_in_group("cipo"):
 		print("sadas")
 		body.emit_signal("tomou_fogo")
-	queue_free()
-#
-#func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	#if anim_name == "disappearing":
-		#queue_free()
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "disappearing":
+		print("chegou aqui")
+		queue_free()
