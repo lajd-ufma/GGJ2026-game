@@ -1,9 +1,121 @@
 [gd_scene format=3 uid="uid://blvypiedpnhk6"]
 
 [ext_resource type="Script" uid="uid://calx2drxtbsfh" path="res://playground/actorsPG/wall.gd" id="1_m3c6b"]
+[ext_resource type="Texture2D" uid="uid://c4dafxu41is3d" path="res://assets/intangibilidade.png" id="2_sjv05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjv05"]
 size = Vector2(119, 181)
+
+[sub_resource type="Animation" id="Animation_t8m3s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_sjv05")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_y3io1"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_sjv05")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_albop"]
+_data = {
+&"RESET": SubResource("Animation_t8m3s"),
+&"idle": SubResource("Animation_y3io1")
+}
 
 [node name="Wall" type="StaticBody2D" unique_id=976257622]
 position = Vector2(-2, 2)
@@ -14,8 +126,13 @@ script = ExtResource("1_m3c6b")
 position = Vector2(1.5, 90.5)
 shape = SubResource("RectangleShape2D_sjv05")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1250037986]
-offset_left = -57.0
-offset_right = 66.0
-offset_bottom = 183.0
-color = Color(0.29291007, 0.00045262158, 0.4074958, 1)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1658779561]
+position = Vector2(5.000005, 90.5)
+scale = Vector2(0.72656256, 0.72265625)
+texture = ExtResource("2_sjv05")
+hframes = 4
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1499425472]
+libraries/ = SubResource("AnimationLibrary_albop")
+autoplay = &"idle"

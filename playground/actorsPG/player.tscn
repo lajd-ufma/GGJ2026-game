@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://3xm71nrccq2h" path="res://assets/sprite_mask/IDLE/idle_left.png" id="2_lxe16"]
 [ext_resource type="Texture2D" uid="uid://5b3hytpc44wk" path="res://assets/sprite_mask/IDLE/idle_up.png" id="3_4wguv"]
 [ext_resource type="Texture2D" uid="uid://qflol1sr8bu2" path="res://assets/sprite_mask/RUN/run_down.png" id="5_k07iq"]
+[ext_resource type="Texture2D" uid="uid://q18rtxqwqdnf" path="res://assets/agua/idle_mask_agua.png" id="6_xoof6"]
 [ext_resource type="Texture2D" uid="uid://csvtl6h16g1ih" path="res://assets/sprite_mask/RUN/run_left.png" id="7_p75wg"]
 [ext_resource type="Texture2D" uid="uid://c7pbmeghepgu3" path="res://assets/sprite_mask/RUN/run_up.png" id="8_xoof6"]
 
@@ -165,6 +166,46 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004)
 }
 
+[sub_resource type="Animation" id="Animation_ajk66"]
+resource_name = "idle_water"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_xoof6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
 [sub_resource type="Animation" id="Animation_p75wg"]
 resource_name = "run"
 length = 0.9
@@ -288,6 +329,7 @@ _data = {
 &"idle": SubResource("Animation_frj6c"),
 &"idle_side": SubResource("Animation_k07iq"),
 &"idle_up": SubResource("Animation_ren0b"),
+&"idle_water": SubResource("Animation_ajk66"),
 &"run": SubResource("Animation_p75wg"),
 &"run_side": SubResource("Animation_xoof6"),
 &"run_up": SubResource("Animation_bx6a3")

@@ -11,7 +11,9 @@ func _ready() -> void:
 func queimar():
 	particles.emitting = true
 	set_collision_layer_value(8,false)
+	$AnimationPlayer.play("burn")
 	await get_tree().create_timer(7).timeout
 	print("regenera")
+	$AnimationPlayer.play_backwards("burn")
 	particles.emitting = false
 	set_collision_layer_value(8,true)

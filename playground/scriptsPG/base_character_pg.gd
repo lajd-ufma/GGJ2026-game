@@ -13,8 +13,39 @@ class_name BaseCaracter
 @export_category("Combat")
 @export var bullet_scene: PackedScene
 
+@onready var sprite: Sprite2D = $Sprite2D
 @onready var raycast_l: RayCast2D = $raycast_l
 @onready var raycast_r: RayCast2D = $raycast_r
+#
+#var idle_agua := preload("res://assets/agua/idle_mask_agua.png")
+#var idle_side := preload("res://assets/agua/idle_left_agua.png")
+#var idle_up := preload("res://assets/agua/idle_up_agua.png")
+#
+#var run_agua := preload("res://assets/agua/run_down_agua.png")
+#var run_side := preload("res://assets/agua/run_left_agua.png")
+#var run_up := preload("res://assets/agua/run_up_agua.png")
+#
+#var SPRITES_AGUA :={
+	#"idle": idle_agua,
+	#"idle_side": idle_side,
+	#"idle_up": idle_up,
+	#"run": run_agua,
+	#"run_side": run_side,
+	#"run_up": idle_up,
+#}
+##var SPRITES_AGUA :={
+	##"idle": idle_agua,
+	##"idle_side": idle_side,
+	##"idle_up": idle_up,
+	##"run": run_agua,
+	##"run_side": run_side,
+	##"run_up": idle_up,
+##}
+#var textures := {
+	#"NONE": SPRITES_NONE,
+	#"AGUA": SPRITES_AGUA
+#}
+#var actual_textures = textures["NONE"]
 
 signal pegou_mascara
 var mask_element := ""
@@ -23,7 +54,6 @@ var idle_animation := "idle"
 var pode_empurrar_bloco := false
 var pode_atirar := false
 var pode_dar_dash := false
-
 var last_direction := Vector2.DOWN
 
 var is_dashing := false
@@ -47,9 +77,13 @@ func mudar_mask_element(element):
 		"FOGO":
 			set_pode_atirar(false)
 	var tween_change_color:Tween = get_tree().create_tween()
+	#
+	#actual_textures = textures[mask_element]
+	
 	match mask_element:
 		"AGUA":
 			tween_change_color.tween_property(self, "modulate", Color.ROYAL_BLUE, 1)
+			print("entrou aqui")
 			set_pode_entrar_na_agua(true)
 		"VENTO":
 			tween_change_color.tween_property(self, "modulate", Color.DARK_SEA_GREEN, 1)
@@ -72,6 +106,8 @@ func set_animation():
 	if velocity.y > 0:
 		anim = "run"
 		idle_animation = "idle"
+		#if sprite.texture != actual_textures["idle"]:
+			#sprite.texture = actual_textures["idle"]
 	elif velocity.y < 0:
 		anim = "run_up"
 		idle_animation = "idle_up"

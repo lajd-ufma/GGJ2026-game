@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dsa5lexnsuvpr"]
 
-[ext_resource type="Texture2D" uid="uid://cmyty7alrffcu" path="res://icon.svg" id="1_bxkrq"]
 [ext_resource type="Script" uid="uid://xsr71fvl1ua" path="res://playground/scriptsPG/block.gd" id="1_kl5gq"]
+[ext_resource type="Texture2D" uid="uid://0t4nww3lqf3e" path="res://assets/sprite que contem a caixa(mod2).png" id="2_kl5gq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xesk"]
-size = Vector2(150, 153)
+size = Vector2(59, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_id6cy"]
-size = Vector2(127, 127)
+size = Vector2(52.000004, 104)
 
 [node name="Block" type="Node2D" unique_id=857622503]
 script = ExtResource("1_kl5gq")
@@ -18,12 +18,11 @@ collision_mask = 43
 
 [node name="Sprite" type="Sprite2D" parent="Area2D" unique_id=761151680]
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_bxkrq")
+texture = ExtResource("2_kl5gq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1179916996]
-visible = false
 light_mask = 0
-position = Vector2(-2, 0.5)
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_2xesk")
 debug_color = Color(0.9693307, 0, 0.4651823, 0.41960785)
 
@@ -32,7 +31,7 @@ collision_layer = 16
 collision_mask = 299
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=448785546]
-position = Vector2(-0.5, -0.5)
+position = Vector2(0.5, 9.536743e-07)
 scale = Vector2(0.75, 0.75)
 shape = SubResource("RectangleShape2D_id6cy")
 debug_color = Color(5.1499906e-06, 0.6300494, 0.47968268, 0.41960785)
