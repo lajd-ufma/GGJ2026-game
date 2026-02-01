@@ -1,16 +1,56 @@
 [gd_scene format=3 uid="uid://h4vm1pmkjc6u"]
 
 [ext_resource type="Script" uid="uid://bcphf833wnt51" path="res://generic_mask.gd" id="1_h87lm"]
-[ext_resource type="Texture2D" uid="uid://cmyty7alrffcu" path="res://icon.svg" id="2_magpp"]
+[ext_resource type="Texture2D" uid="uid://hmiryuisnu17" path="res://assets/masks/mask_fujin.png" id="2_magpp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_magpp"]
+radius = 27.45906
+
+[sub_resource type="Animation" id="Animation_magpp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1gqxg"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 10), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_elo0p"]
+_data = {
+&"RESET": SubResource("Animation_magpp"),
+&"idle": SubResource("Animation_1gqxg")
+}
 
 [node name="generic_mask" type="Node2D" unique_id=241255481]
 script = ExtResource("1_h87lm")
 mask_element = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1895112890]
-scale = Vector2(0.2, 0.2)
+modulate = Color(0.39215687, 0.58431375, 0.92941177, 1)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_magpp")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1098973325]
@@ -18,5 +58,9 @@ collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1878887876]
 shape = SubResource("CircleShape2D_magpp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1914366396]
+libraries/ = SubResource("AnimationLibrary_elo0p")
+autoplay = &"idle"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
