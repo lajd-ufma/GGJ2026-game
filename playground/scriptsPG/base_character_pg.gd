@@ -94,7 +94,8 @@ func _input(event):
 			shoot()
 		if pode_dar_dash:
 			start_dash()
-
+	if event.is_action_pressed("restart"):
+		get_tree().reload_current_scene()
 func _physics_process(delta: float) -> void:
 	if is_dashing:
 		velocity = dash_direction * _dash_speed
