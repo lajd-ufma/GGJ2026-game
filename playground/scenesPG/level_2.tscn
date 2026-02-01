@@ -36,12 +36,13 @@ tile_map_data = PackedByteArray("AAADAAQAAAAAAAAAAAACAAQAAAAAAAAAAAABAAQAAAAAAAA
 tile_set = ExtResource("2_y5hvx")
 
 [node name="porta" type="TileMapLayer" parent="terreno" unique_id=479917955]
+modulate = Color(0.6397311, 0.9849829, 0.89363, 1)
 scale = Vector2(0.25, 0.25)
 tile_map_data = PackedByteArray("AAAYALAAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_rt3hb")
 
 [node name="player" parent="." unique_id=1362530387 instance=ExtResource("4_y5hvx")]
-position = Vector2(216, 672)
+position = Vector2(96, 720)
 scale = Vector2(1, 1)
 
 [node name="generic_mask" parent="." unique_id=241255481 instance=ExtResource("5_bqj8s")]
