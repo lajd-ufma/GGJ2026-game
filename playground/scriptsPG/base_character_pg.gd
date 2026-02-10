@@ -60,10 +60,25 @@ var is_dashing := false
 var dash_timer := 0.0
 var dash_direction := Vector2.ZERO
 
-func _ready() -> void:
-	print(scale)
-	pegou_mascara.connect(mudar_mask_element)
+var is_mobile:= false
+@onready var joystick: Control = $CanvasLayer/joystick
+@onready var special: TouchScreenButton = $CanvasLayer/special
 
+func _ready() -> void:
+	pegou_mascara.connect(mudar_mask_element)
+	_disactive_special_button()
+	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
+		is_mobile = true
+	else:
+		$CanvasLayer.queue_free()
+func _active_special_button():
+	if special != null:
+		special.modulate = Color.WHITE
+		special.visible = true
+func _disactive_special_button():
+	if special != null:
+		special.modulate = Color.DARK_GRAY
+		special.visible = false
 func mudar_mask_element(element):
 	previous_mask = mask_element
 	mask_element = element
@@ -82,23 +97,26 @@ func mudar_mask_element(element):
 	
 	match mask_element:
 		"AGUA":
+			_disactive_special_button()
 			tween_change_color.tween_property(self, "modulate", Color.ROYAL_BLUE, 1)
-			print("entrou aqui")
 			set_pode_entrar_na_agua(true)
 		"VENTO":
+			_active_special_button()
 			tween_change_color.tween_property(self, "modulate", Color.DARK_SEA_GREEN, 1)
 			set_pode_empurrar_bloco(true)
 		"SOMBRA":
+			_active_special_button()
 			tween_change_color.tween_property(self, "modulate", Color.MEDIUM_PURPLE, 1)
 			set_pode_dar_dash(true)
 		"FOGO":
+			_active_special_button()
 			tween_change_color.tween_property(self, "modulate", Color.DARK_ORANGE, 1)
 			set_pode_atirar(true)
 func _process(_delta: float) -> void:
 	if raycast_l.is_colliding() or raycast_r.is_colliding():
-		z_index=2
+		z_index=5
 	else:
-		z_index = 1
+		z_index = 2
 	set_animation()
 func set_animation():
 	var anim := idle_animation
@@ -144,9 +162,13 @@ func _physics_process(delta: float) -> void:
 		return
 
 	var input_dir := Vector2.ZERO
-	input_dir.x = Input.get_axis("move_left","move_right")
-	input_dir.y = Input.get_axis("move_up", "move_down")
-
+	
+	if is_mobile:
+		input_dir =  joystick.get_direction()
+	else:
+		input_dir.x = Input.get_axis("move_left", "move_right")
+		input_dir.y = Input.get_axis("move_up", "move_down")
+	
 	# trava em 4 direções
 	if abs(input_dir.x) > abs(input_dir.y):
 		input_dir.y = 0

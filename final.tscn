@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cu1nxno7f2ndu" path="res://final.gd" id="1_tvybu"]
 [ext_resource type="PackedScene" uid="uid://ckymstwshore8" path="res://playground/actorsPG/background_music.tscn" id="2_qt6nr"]
+[ext_resource type="FontFile" uid="uid://y7odnc4gyphw" path="res://assets/Asimovian/Asimovian-Regular.ttf" id="3_qt6nr"]
 
 [sub_resource type="Animation" id="Animation_tvybu"]
 length = 0.001
@@ -64,11 +65,30 @@ color = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 360.0
 offset_top = 250.0
-offset_right = 809.0
+offset_right = 827.0
 offset_bottom = 338.0
 theme_override_font_sizes/font_size = 64
-text = "Pabéms pasou"
+text = "Pabéms pasou!"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Label" unique_id=1444347077]
 libraries/ = SubResource("AnimationLibrary_7678y")
 autoplay = &"idle"
+
+[node name="button_quit" type="Button" parent="." unique_id=438120069]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = 90.0
+offset_right = 154.0
+offset_bottom = 163.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_qt6nr")
+theme_override_font_sizes/font_size = 32
+text = "Fechar"
+
+[connection signal="pressed" from="button_quit" to="." method="_on_button_quit_pressed"]

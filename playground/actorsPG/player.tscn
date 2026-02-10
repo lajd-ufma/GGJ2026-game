@@ -9,6 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://q18rtxqwqdnf" path="res://assets/agua/idle_mask_agua.png" id="6_xoof6"]
 [ext_resource type="Texture2D" uid="uid://csvtl6h16g1ih" path="res://assets/sprite_mask/RUN/run_left.png" id="7_p75wg"]
 [ext_resource type="Texture2D" uid="uid://c7pbmeghepgu3" path="res://assets/sprite_mask/RUN/run_up.png" id="8_xoof6"]
+[ext_resource type="PackedScene" uid="uid://cp7e57u4on1mp" path="res://joystick.tscn" id="10_bx6a3"]
+[ext_resource type="Texture2D" uid="uid://dl8p1k0y0qhyd" path="res://assets/Buttons/mask_specialbutton.png" id="11_ajk66"]
+[ext_resource type="Texture2D" uid="uid://dau04dxaaun8b" path="res://assets/Buttons/mask_specialbutton-clicked.png" id="12_kf8lu"]
+[ext_resource type="Texture2D" uid="uid://bd0etyq8fjnqx" path="res://assets/Buttons/restartbutton.png" id="13_uwut0"]
+[ext_resource type="Texture2D" uid="uid://c6lwqum1svjcp" path="res://assets/Buttons/restartbutton-clicked.png" id="14_0eitq"]
 
 [sub_resource type="Animation" id="Animation_j1rto"]
 length = 0.001
@@ -339,26 +344,17 @@ _data = {
 radius = 7.5
 height = 20.5
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajk66"]
+size = Vector2(32, 32)
+
 [node name="player" type="CharacterBody2D" unique_id=1362530387 node_paths=PackedStringArray("_animation", "_sprite2D") groups=["player"]]
-z_index = 1
+z_index = 2
 scale = Vector2(2, 2)
 collision_mask = 254
 script = ExtResource("1_4wguv")
 _animation = NodePath("AnimationPlayer")
 _sprite2D = NodePath("Sprite2D")
 bullet_scene = ExtResource("2_k07iq")
-
-[node name="raycast_l" type="RayCast2D" parent="." unique_id=216258704]
-position = Vector2(-5, 15)
-rotation = 3.1415927
-target_position = Vector2(-0.99999666, 36)
-collision_mask = 32
-
-[node name="raycast_r" type="RayCast2D" parent="." unique_id=1885641895]
-position = Vector2(5, 15)
-rotation = 3.1415927
-target_position = Vector2(2.861023e-06, 36)
-collision_mask = 32
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=462706298]
 scale = Vector2(2.15, 2.15)
@@ -374,3 +370,38 @@ position = Vector2(0, 26.5)
 rotation = 1.5707964
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_4wguv")
+
+[node name="raycast_l" type="RayCast2D" parent="." unique_id=216258704]
+position = Vector2(-10, 30.5)
+rotation = 3.1415927
+target_position = Vector2(-0.99999666, 36)
+collision_mask = 184
+
+[node name="raycast_r" type="RayCast2D" parent="." unique_id=1885641895]
+position = Vector2(9, 30)
+rotation = 3.1415927
+target_position = Vector2(2.861023e-06, 36)
+collision_mask = 184
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1604911164]
+
+[node name="joystick" parent="CanvasLayer" unique_id=1818160590 instance=ExtResource("10_bx6a3")]
+offset_left = 96.0
+offset_top = -252.0
+offset_right = 452.0
+offset_bottom = 104.0
+
+[node name="special" type="TouchScreenButton" parent="CanvasLayer" unique_id=919973814]
+position = Vector2(1024, 556)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("11_ajk66")
+texture_pressed = ExtResource("12_kf8lu")
+shape = SubResource("RectangleShape2D_ajk66")
+action = "special"
+
+[node name="restart" type="TouchScreenButton" parent="CanvasLayer" unique_id=1536501881]
+position = Vector2(1116, 64)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("13_uwut0")
+texture_pressed = ExtResource("14_0eitq")
+action = "restart"
