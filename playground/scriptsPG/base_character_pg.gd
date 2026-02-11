@@ -71,14 +71,17 @@ func _ready() -> void:
 		is_mobile = true
 	else:
 		$CanvasLayer.queue_free()
+
 func _active_special_button():
 	if special != null:
 		special.modulate = Color.WHITE
 		special.visible = true
+
 func _disactive_special_button():
 	if special != null:
 		special.modulate = Color.DARK_GRAY
 		special.visible = false
+
 func mudar_mask_element(element):
 	previous_mask = mask_element
 	mask_element = element
@@ -112,20 +115,19 @@ func mudar_mask_element(element):
 			_active_special_button()
 			tween_change_color.tween_property(self, "modulate", Color.DARK_ORANGE, 1)
 			set_pode_atirar(true)
+
 func _process(_delta: float) -> void:
 	if raycast_l.is_colliding() or raycast_r.is_colliding():
 		z_index=5
 	else:
 		z_index = 2
 	set_animation()
+
 func set_animation():
 	var anim := idle_animation
-	# animações
 	if velocity.y > 0:
 		anim = "run"
 		idle_animation = "idle"
-		#if sprite.texture != actual_textures["idle"]:
-			#sprite.texture = actual_textures["idle"]
 	elif velocity.y < 0:
 		anim = "run_up"
 		idle_animation = "idle_up"
@@ -133,12 +135,16 @@ func set_animation():
 		anim = "run_side"
 		idle_animation = "idle_side"
 	_animation.play(anim)
+
 func set_pode_entrar_na_agua(value): 
 	set_collision_mask_value(4, !value) 
+
 func set_pode_empurrar_bloco(value): 
 	pode_empurrar_bloco = value
+
 func set_pode_dar_dash(value):
 	pode_dar_dash = value
+
 func set_pode_atirar(value):
 	pode_atirar = value
 
@@ -150,11 +156,11 @@ func _input(event):
 			start_dash()
 	if event.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
+
 func _physics_process(delta: float) -> void:
 	if is_dashing:
 		velocity = dash_direction * _dash_speed
 		move_and_slide()
-
 		dash_timer -= delta
 		if dash_timer <= 0:
 			is_dashing = false
@@ -164,28 +170,22 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Vector2.ZERO
 	
 	if is_mobile:
-		input_dir =  joystick.get_direction()
+		input_dir = joystick.get_direction()
 	else:
 		input_dir.x = Input.get_axis("move_left", "move_right")
 		input_dir.y = Input.get_axis("move_up", "move_down")
-	
-	# trava em 4 direções
-	if abs(input_dir.x) > abs(input_dir.y):
-		input_dir.y = 0
-		input_dir.x = sign(input_dir.x)
-	else:
-		input_dir.x = 0
-		input_dir.y = sign(input_dir.y)
 
 	if input_dir != Vector2.ZERO:
+		input_dir = input_dir.normalized()
 		last_direction = input_dir
 
 	velocity = input_dir * _move_speed
+
 	position.x = clamp(position.x, 0, 1280)
 	position.y = clamp(position.y, 0, 768)
+
 	move_and_slide()
 
-	# sprite
 	if velocity.x > 0:
 		_sprite2D.flip_h = true
 	elif velocity.x < 0:
@@ -197,8 +197,6 @@ func start_dash() -> void:
 	set_collision_mask_value(6, false)
 	is_dashing = true
 	dash_timer = _dash_time
-
-	# dash sempre na última direção válida
 	dash_direction = last_direction
 
 func shoot() -> void:
